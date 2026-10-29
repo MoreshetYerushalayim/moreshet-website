@@ -294,6 +294,7 @@
     $$('.gallery-horizontal-scroll', root).forEach(function (sc) {
       if (sc.dataset.siteInit) return; sc.dataset.siteInit = '1';
       sc.style.overflowX = 'auto';
+      sc.style.scrollSnapType = 'none'; // Wix's snap rule has no snap points here and only causes drifting
       var gal = sc.closest('.pro-gallery-parent-container') || sc.parentNode;
       var next = gal.querySelector('[data-hook="nav-arrow-next"]');
       var prev = gal.querySelector('[data-hook="nav-arrow-prev"]');
@@ -325,27 +326,47 @@
   var isDesktop = ((doc.querySelector('meta[name=site-device]') || {}).content || 'desktop') === 'desktop';
   function autoslide(sc) {
     var inner = sc.querySelector('.gallery-horizontal-scroll-inner'), hover = false, busy = false;
+    if (!inner) return;
+    var groups = $$('[data-hook="group-view"]', inner);
+    if (!groups.length) return;
+    var gl = function (g) { return parseFloat(g.style.getPropertyValue('--group-left')) || 0; };
+    var gw = function (g) { return parseFloat(g.style.getPropertyValue('--group-width')) || g.offsetWidth; };
+    var last = groups[groups.length - 1], total = gl(last) + gw(last) - gl(groups[0]);
+    // Wix loops forever: append one copy of the photos so the strip never runs out or jumps back.
+    groups.forEach(function (g) {
+      var c = g.cloneNode(true);
+      c.setAttribute('data-site-clone', '1');
+      c.style.setProperty('--group-left', (gl(g) + total) + 'px');
+      g.parentNode.appendChild(c);
+    });
+    var all = $$('[data-hook="group-view"]', inner);
+    // Snap points are the photo centres (Wix uses centre snapping).
+    var stops = function () {
+      var cw = sc.clientWidth;
+      return all.map(function (g) { return Math.max(0, gl(g) + gw(g) / 2 - cw / 2); }).sort(function (a, b) { return a - b; });
+    };
     sc.addEventListener('mouseenter', function () { hover = true; });
     sc.addEventListener('mouseleave', function () { hover = false; });
     setInterval(function () {
-      if (hover || busy || !inner) return;
-      var left = sc.getBoundingClientRect().left, d = 0;
-      $$('.gallery-item-container', sc).some(function (it) {
-        var x = it.getBoundingClientRect().left - left - 5;
-        if (x > 2) { d = x; return true; }
-      });
-      var max = sc.scrollWidth - sc.clientWidth;
-      if (!d || sc.scrollLeft >= max - 2) { sc.scrollTo({ left: 0, behavior: 'smooth' }); return; }
-      d = Math.min(d, max - sc.scrollLeft);
+      if (hover || busy) return;
+      var s = stops(), cur = sc.scrollLeft;
+      if (cur >= s[groups.length] - 2) { // past the original set: jump back by one set (identical picture)
+        sc.scrollLeft = cur - total; cur = sc.scrollLeft;
+        s = stops();
+      }
+      var next = s.filter(function (v) { return v > cur + 2; })[0];
+      if (next === undefined) return;
+      var d = next - cur;
       busy = true;
       inner.style.transition = 'transform 800ms linear';
       inner.style.transform = 'translateX(' + (-d) + 'px)';
       setTimeout(function () {
         inner.style.transition = 'none'; inner.style.transform = 'translateX(0px)';
-        sc.scrollLeft += d; busy = false;
+        sc.scrollLeft = next; busy = false;
       }, 810);
     }, 2010);
   }
+
   initGalleries(doc);
 
   /* full-screen photo viewer (Campus / Ovadia / Raymond galleries) */
@@ -407,8 +428,10 @@
     var k = instaItems.indexOf(act);
     if (k >= 0) { openPopup('insta', k); return; }
     var gal = act.closest('.pro-gallery-parent-container') || act.closest('.pro-gallery');
-    var items = $$('.gallery-item-container', gal);
+    var items = $$('.gallery-item-container', gal).filter(function (it) { return !it.closest('[data-site-clone]'); });
     var item = act.closest('.gallery-item-container') || act.parentNode;
-    openViewer(items, Math.max(0, items.indexOf(item)));
+    var k2 = items.indexOf(item);
+    if (k2 < 0) { var id = item.getAttribute('data-id'); k2 = items.findIndex(function (it) { return it.getAttribute('data-id') === id; }); }
+    openViewer(items, Math.max(0, k2));
   }, true);
 })();
