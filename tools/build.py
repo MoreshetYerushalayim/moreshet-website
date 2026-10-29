@@ -300,10 +300,39 @@ def build_donate(h):
     return h.replace("https://www-moreshetyerushalayim-com.filesusr.com/html/a4810d_5285aced8166c88e2ddb43c5c03d43f8.html",
                      "@@ROOT@@/embeds/donate.html")
 
+
+# ---------- menu sub-items that jump to a section of a page ----------
+ANCHOR_OVERRIDES = {"dataItem-m92ysos5": "comp-m92ysor2"}  # "Instagram" item -> section labelled "Insatgram" on Wix
+_anchor_map = None
+def anchor_map():
+    global _anchor_map
+    if _anchor_map is not None:
+        return _anchor_map
+    m = dict(ANCHOR_OVERRIDES)
+    home = open(os.path.join(CAP, "desktop", "home", "page.html")).read()
+    for da, href, label in re.findall(r'<a\b[^>]*data-anchor="([^"]+)"[^>]*href="([^"]+)"[^>]*>.*?__label">([^<]+)<', home, flags=re.S):
+        if da in m:
+            continue
+        path = href.split(".com")[-1].strip("/") or "home"
+        try:
+            t = open(os.path.join(CAP, "desktop", path, "page.html")).read()
+        except OSError:
+            continue
+        r = re.search(r'id="(comp-[a-z0-9]+)" class="[^"]*" role="region" tabindex="-1" aria-label="' + re.escape(label.strip()) + '"', t)
+        if r:
+            m[da] = r.group(1)
+    _anchor_map = m
+    return m
+
+def build_anchors(h):
+    am = anchor_map()
+    return re.sub(r'data-anchor="([^"]+)"', lambda mm: mm.group(0) + (f' data-site-anchor="{am[mm.group(1)]}"' if mm.group(1) in am else ""), h)
+
 def process(name, dev):
     raw = open(os.path.join(CAP, dev, name, "page.html")).read()
     h = strip_wix(raw)
     h = fix_links(h)
+    h = build_anchors(h)
     h, pcss = build_popups(name, dev, h)
     h = build_slides(name, dev, h)
     h = build_map(h)
@@ -311,6 +340,9 @@ def process(name, dev):
     h = head_inject(h, dev, pcss)
     # re-arm Wix entrance animations (played by site.js when each element scrolls into view)
     h = h.replace(' data-motion-enter="done"', ' data-motion-enter="pending"')
+    # Wix's script pins images to the pixel size of the 1280px capture; restore its fluid sizing
+    h = re.sub(r'(<img\b[^>]*style=")width: ?\d+(?:\.\d+)?px; ?height: ?\d+(?:\.\d+)?px;( ?object-fit)',
+               r'\1width:100%;height:100%;\2', h)
     return h
 
 def main():
