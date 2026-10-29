@@ -23,5 +23,5 @@ PY
 while IFS='|' read f d; do
   [ -f "$REPO/site/_files/ugd/$f" ] && [ -n "$d" ] && printf '/_files/ugd/%s\n  Content-Disposition: %s\n' "$f" "$d" >> $REPO/site/_headers
 done < /home/claude/tools/pdf_names.txt
-cp /home/claude/tools/{build.py,site.js,site.css,donate.html,_middleware.js,assemble.sh,pdf_names.txt,chunks.json} $REPO/tools/
+cp /home/claude/tools/{build.py,site.js,site.css,mobile-compact.css,donate.html,_middleware.js,assemble.sh,pdf_names.txt,chunks.json} $REPO/tools/
 du -sh $REPO/site; find $REPO/site -type f | wc -l; ls /home/claude/bigpdfs | wc -l; cat $REPO/site/_headers | head -4

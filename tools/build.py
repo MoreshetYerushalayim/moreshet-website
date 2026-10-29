@@ -197,6 +197,8 @@ def localize_doc(h):
 def head_inject(h, dev, popups_css=""):
     extra = f'<meta name="site-device" content="{dev}">'
     extra += '<link rel="stylesheet" href="@@ROOT@@/assets/site.css">'
+    if dev == "mobile":
+        extra += '<link rel="stylesheet" href="@@ROOT@@/assets/mobile-compact.css">'
     if MODE == "preview" and dev == "desktop":
         extra = ('<script>(function(){if(/iPhone|iPod|Android.*Mobile|Windows Phone|BlackBerry|BB10|Opera Mini|IEMobile|webOS/i.test(navigator.userAgent)){'
                  'var f=location.pathname.split("/").pop()||"index.html";location.replace("_m/"+f+location.search+location.hash);}})();</script>') + extra
@@ -328,11 +330,24 @@ def build_anchors(h):
     am = anchor_map()
     return re.sub(r'data-anchor="([^"]+)"', lambda mm: mm.group(0) + (f' data-site-anchor="{am[mm.group(1)]}"' if mm.group(1) in am else ""), h)
 
+# Page names Wix had wrong (shown on the browser tab and in Google)
+TITLE_FIX = {"codeofconduct": "Code of Conduct", "visainformation": "Visa Information",
+             "ovadiabuddysutton": "Ovadia Buddy Sutton", "copy-of-ovaida-buddy-sutton": "Saul E. Ashkenazi"}
+def fix_title(name, h):
+    if name not in TITLE_FIX:
+        return h
+    t = TITLE_FIX[name] + " | Yeshivat Moreshet Yerushalayim"
+    h = re.sub(r"<title>[^<]*</title>", "<title>" + t + "</title>", h, count=1)
+    h = re.sub(r'(<meta\b[^>]*(?:property|name)="(?:og:title|twitter:title)"[^>]*content=")[^"]*(")', lambda m: m.group(1) + t + m.group(2), h)
+    h = re.sub(r'(<meta\b[^>]*content=")[^"]*("[^>]*(?:property|name)="(?:og:title|twitter:title)")', lambda m: m.group(1) + t + m.group(2), h)
+    return h
+
 def process(name, dev):
     raw = open(os.path.join(CAP, dev, name, "page.html")).read()
     h = strip_wix(raw)
     h = fix_links(h)
     h = build_anchors(h)
+    h = fix_title(name, h)
     h, pcss = build_popups(name, dev, h)
     h = build_slides(name, dev, h)
     h = build_map(h)
@@ -364,7 +379,7 @@ def main():
         path = f"/{stem}.html" if dev == "desktop" else f"/_m/{stem}.html"
         out_write(path, h.encode())
     # static support files
-    for f in ("site.js", "site.css"):
+    for f in ("site.js", "site.css", "mobile-compact.css"):
         shutil.copy(os.path.join(TOOLS, f), os.path.join(OUT, "assets", f))
     os.makedirs(os.path.join(OUT, "embeds"), exist_ok=True)
     shutil.copy(os.path.join(TOOLS, "donate.html"), os.path.join(OUT, "embeds", "donate.html"))

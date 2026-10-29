@@ -14,6 +14,11 @@ Owner: Victor Dweck (marketing director). The site must stay visually identical 
   - `_redirects` old Wix redirects (301), `_headers` PDF download names, `embeds/donate.html` PayPal button.
 - `tools/` — the scripts that built the site from captures of the live Wix site (reference only).
 
+## Deliberate changes from the Wix original
+- Phones: Team tiles 2 per row and Alumni logos 3 per row (`site/assets/mobile-compact.css`, phone pages only).
+- Fixed page titles: Code of Conduct, Visa Information, Ovadia Buddy Sutton, Saul E. Ashkenazi
+  (`/copy-of-ovaida-buddy-sutton` is the Saul E. Ashkenazi page, not a duplicate — keep it).
+
 ## Editing
 - Pages are Wix's rendered HTML. Find content by its visible text and edit in place; keep Wix class
   names/ids. To add a team tile or magazine card, duplicate an existing one in both layouts.
