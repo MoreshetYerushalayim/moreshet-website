@@ -1,0 +1,16 @@
+/* Full-screen photo viewer (matches the Wix gallery's expand mode) */
+.site-viewer{position:fixed;inset:0;z-index:100000;background:#4b246e;color:#fff;-webkit-user-select:none;user-select:none}
+.site-viewer button{position:absolute;background:none;border:0;padding:8px;color:#fff;cursor:pointer;line-height:0;z-index:2}
+.site-viewer .sv-close{top:22px;right:24px}
+.site-viewer .sv-full{top:22px;left:24px}
+.site-viewer .sv-prev,.site-viewer .sv-next{top:50%;margin-top:-20px;padding:12px}
+.site-viewer .sv-prev{left:16px}
+.site-viewer .sv-next{right:16px}
+.site-viewer .sv-prev svg{transform:scaleX(-1)}
+.site-viewer .sv-prev svg,.site-viewer .sv-next svg{width:12px;height:22px}
+.site-viewer .sv-stage{position:absolute;top:80px;bottom:80px;left:90px;right:90px;display:flex;align-items:center;justify-content:center}
+.site-viewer .sv-stage img{max-width:100%;max-height:100%;object-fit:contain;display:block}
+.site-viewer--m .sv-close{top:14px;left:12px;right:auto}
+.site-viewer--m .sv-prev,.site-viewer--m .sv-next{display:none}
+.site-viewer--m .sv-stage{top:90px;left:0;right:0;bottom:0;align-items:flex-start}
+.site-viewer--m .sv-stage img{width:100%;max-height:none}
