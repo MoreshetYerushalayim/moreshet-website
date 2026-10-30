@@ -653,3 +653,4 @@ dialog.bio .bio-in .ph img{border-radius:50%;width:100%;height:auto;aspect-ratio
   .pt-tile:hover .pt-plus{transform:translateY(3px)}
   .pt-tile[aria-expanded="true"] .pt-plus{transform:rotate(180deg)}
 }
+.rule{display:none!important}
