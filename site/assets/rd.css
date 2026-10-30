@@ -512,3 +512,5 @@ dialog.bio .bio-in .ph img{border-radius:50%;width:100%;height:auto;aspect-ratio
 .grid-team .person:hover{border-color:var(--gold)}
 @supports not (grid-template-rows:subgrid){.grid-team .person{display:flex}}
 @media (min-width:821px){.grid-team{row-gap:28px!important}.grid-team .person{padding:18px 14px}}
+/* round 6 */
+.logos li{border:0!important;background:transparent!important}

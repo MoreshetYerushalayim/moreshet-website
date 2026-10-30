@@ -112,7 +112,7 @@ def page(path, title, cur, body, desc="Yeshivat Moreshet Yerushalayim, a Sephard
 <link rel="icon" href="%s">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&family=Roboto+Serif:opsz,wght@8..144,600;8..144,700;8..144,800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/rd.css?v=5">
+<link rel="stylesheet" href="/assets/rd.css?v=6">
 </head>
 <body>
 %s
@@ -120,7 +120,7 @@ def page(path, title, cur, body, desc="Yeshivat Moreshet Yerushalayim, a Sephard
 %s
 </main>
 %s
-<script src="/assets/rd.js?v=5" defer></script>
+<script src="/assets/rd.js?v=6" defer></script>
 </body>
 </html>
 """ % (E(title), E(desc), LOGO, header(cur), body, FOOTER)
@@ -387,9 +387,9 @@ def media():
         if L[0].startswith("Year in Review"):
             title, sub, ded = L[0], L[1].replace("-", "–"), ""
         else:
-            title, sub, ded = L[0], "Moreshet Magazine", " ".join(L[1:])
-        cards += """<article class="mag rv"><a class="cv" href="%s" aria-label="Read %s"><img src="%s" alt="Cover of %s" loading="lazy"></a><div class="mt"><h3 class="t">%s</h3><div class="s">%s</div>%s</div><a class="btn purple" href="%s">READ THIS ISSUE</a></article>""" % (
-            m["pdf"], E(title), hires(m["img"], 800), E(title), E(title), E(sub), ('<p class="d">%s</p>' % E(ded)) if ded else "", m["pdf"])
+            title, sub, ded = ("Year 9, " + L[0]) if L[0].startswith("Issue") else L[0], "", " ".join(L[1:])
+        cards += """<article class="mag rv"><a class="cv" href="%s" aria-label="Read %s"><img src="%s" alt="Cover of %s" loading="lazy"></a><div class="mt"><h3 class="t">%s</h3>%s%s</div><a class="btn purple" href="%s">READ THIS ISSUE</a></article>""" % (
+            m["pdf"], E(title), hires(m["img"], 800), E(title), E(title), ('<div class="s">%s</div>' % E(sub)) if sub else "", ('<p class="d">%s</p>' % E(ded)) if ded else "", m["pdf"])
     ig = "".join('<a href="%s" aria-label="Open on Instagram"><img src="%s" alt="%s" loading="lazy"><span>%s</span></a>' % (p["link"], p["img"], E(p["caption"][:120]), E(p["date"] or "")) for p in insta)
     body = """
 <section class="band lilac" id="shiurim">
