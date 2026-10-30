@@ -9,7 +9,7 @@ export async function onRequestGet({ request, env, waitUntil }) {
   const hit = await cache.match(key);
   if (hit) return hit;
   if (!env.IG_TOKEN) return json({ error: "not configured", posts: [] }, 200);
-  const api = `https://graph.facebook.com/v21.0/${IG_USER}/media?fields=${FIELDS}&limit=9&access_token=${encodeURIComponent(env.IG_TOKEN)}`;
+  const api = `https://graph.facebook.com/v21.0/${IG_USER}/media?fields=${FIELDS}&limit=9&access_token=${encodeURIComponent(String(env.IG_TOKEN).replace(/[\s"']+/g, ""))}`;
   const r = await fetch(api);
   if (!r.ok) { let m = ""; try { m = (await r.json()).error.message; } catch (e) {} return json({ error: "instagram " + r.status + ": " + m, posts: [] }, 200); }
   const d = await r.json();
