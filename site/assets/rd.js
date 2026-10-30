@@ -52,6 +52,7 @@
       ptp.hidden = !on;
       if (on) {
         ptp.classList.toggle('row2', k >= 3);
+        ptp.style.setProperty('--px', ((k % 3) * 2 + 1) / 6 * 100 + '%');
         $$('.pt-tx', ptp).forEach(function (t) { t.hidden = +t.getAttribute('data-pd') !== k; });
       }
     });
