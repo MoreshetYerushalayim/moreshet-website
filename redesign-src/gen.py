@@ -51,6 +51,9 @@ LOGO = "/media/rd/logo.webp"
 APPLY = "https://www.yeshivaapplication.org/"
 WA = "https://chat.whatsapp.com/E8A9Q9Ur58lKCF0xgrJNPX"
 IG = "https://www.instagram.com/moreshet_yerushalayim/"
+WA_SVG = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>'
+IG_SVG = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>'
+HAND_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 15h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 17"/><path d="m7 21 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9"/><path d="m2 16 6 6"/><circle cx="16" cy="9" r="2.9"/><circle cx="6" cy="5" r="3"/></svg>'
 ARROW = '<svg viewBox="0 0 30 10" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M0 5h28M24 1l4 4-4 4"/></svg>'
 
 def header(cur):
@@ -72,7 +75,7 @@ def header(cur):
   <div class="hdr-top"><a href="/"><img src="%(logo)s" alt="Yeshivat Moreshet Yerushalayim, home" width="112" height="112"></a></div>
   <nav aria-label="Main"><ul class="nav">%(items)s</ul></nav>
   <div class="mbar">
-    <a class="brand" href="/"><img src="%(logo)s" alt="" width="44" height="44"><span>Yeshivat Moreshet<br>Yerushalayim</span></a>
+    <a class="brand" href="/"><img src="%(logo)s" alt="Yeshivat Moreshet Yerushalayim, home" width="52" height="52"></a>
     <button type="button" id="menu-open" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
   </div>
 </header>
@@ -84,19 +87,18 @@ def header(cur):
 FOOTER = """
 <footer class="ftr">
   <div class="wrap">
-    <div class="col"><b>ISRAEL</b>Yeshivat Moreshet Yerushalayim<br>Korazin Street 22, Jerusalem, Israel<br><a href="mailto:Office@moreshetyerushalayim.com">Office@moreshetyerushalayim.com</a>
-      <div class="soc"><a href="%(wa)s" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="#CAB202" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.4 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"/></svg></a><a href="%(ig)s" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="#CAB202" stroke-width="2" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="#CAB202"/></svg></a></div>
-    </div>
     <img class="logo" src="%(logo)s" alt="" width="150" height="150">
+    <div class="col"><b>ISRAEL</b>Yeshivat Moreshet Yerushalayim<br>Korazin Street 22, Jerusalem, Israel<br><a href="mailto:Office@moreshetyerushalayim.com">Office@moreshetyerushalayim.com</a></div>
     <div class="col"><b>AMERICA / BUSINESS OFFICE</b>American Friends of Yeshivat Moreshet Yerushalayim<br>1385 Broadway, 16th Floor, NY, NY 10018<br><a href="mailto:vmosseri@moreshetyerushalayim.com">vmosseri@moreshetyerushalayim.com</a></div>
+    <div class="soc"><a href="%(wa)s" aria-label="WhatsApp">%(wasvg)s</a><a href="%(ig)s" aria-label="Instagram">%(igsvg)s</a></div>
     <div class="copy">© Yeshivat Moreshet Yerushalayim</div>
   </div>
 </footer>
 <nav class="dock" aria-label="Quick actions">
-  <a href="/application"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M9 14h6M9 18h4"/></svg>APPLY</a>
-  <a href="mailto:Office@moreshetyerushalayim.com"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>EMAIL</a>
-  <a href="/donate"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>DONATE</a>
-</nav>""" % {"wa": WA, "ig": IG, "logo": LOGO}
+  <a href="%(apply)s"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M9 14h6M9 18h4"/></svg>APPLY</a>
+  <a href="%(ig)s" class="ig">%(igsvg)sCONNECT</a>
+  <a href="/donate">%(hand)sDONATE</a>
+</nav>""" % {"wa": WA, "ig": IG, "logo": LOGO, "wasvg": WA_SVG, "igsvg": IG_SVG, "hand": HAND_SVG, "apply": APPLY}
 
 def page(path, title, cur, body, desc="Yeshivat Moreshet Yerushalayim, a Sephardic post-high school yeshivah in Jerusalem."):
     doc = """<!doctype html>
@@ -163,10 +165,9 @@ def home():
          "The journey at Yeshivat Moreshet Yerushalayim doesn’t end with the completion of the year. We offer summer learning opportunities, spearheaded by alumni, in Deal, New Jersey. We have reunions, both formal and informal. It's not uncommon for students to come visit the school during the college breaks to learn and reconnect with each other, which we love! When the year concludes, it’s just the beginning of a lifelong journey of Torah learning, personal growth, meaningful friendships and continued community involvement.", ""),
     ]
     rows = ""
-    for t, img, p, ded in pil:
-        rows += """<article class="pillar"><figure><img src="%s" alt="" loading="lazy"></figure>
-<div class="txt rv"><h3>%s</h3><p class="long">%s</p>%s<button type="button" class="readmore show-phone">Read more</button></div></article>""" % (
-            hires(img, 1400), t, E(p), ('<p class="ded">%s</p>' % ded) if ded else "")
+    for n, (t, img, p, ded) in enumerate(pil):
+        rows += """<details class="pil rv" name="pillars"%s><summary><span class="num">%d</span><span class="pt">%s</span></summary><div class="pa"><p>%s</p>%s</div></details>""" % (
+            " open" if n == 0 else "", n + 1, t, E(p), ('<p class="ded">%s</p>' % ded) if ded else "")
     quotes = [
         ("Over two incredible years at Yeshivat Moreshet Yerushalayim, I didn’t just learn Torah. I found a home, mentors I trust, and friendships that last forever.", "Sol Terzi, Class of 2025"),
         ("To me, Yeshivat Moreshet Yerushalayim was more than a year in Israel. It’s a lifetime investment that I continuously find paying returns throughout life.", "Ely Mamiye, Class of 2023"),
@@ -179,27 +180,24 @@ def home():
 <section class="hero">
   <img class="hero-img" src="%s" alt="Students in front of the Yeshivah building in Jerusalem">
   <div class="hero-box rv">
-    <h1 class="eyebrow">WELCOME</h1>
+    <h1 class="sr">Yeshivat Moreshet Yerushalayim</h1>
     <p>Yeshivat Moreshet Yerushalayim is a Sephardic post-high school yeshivah located in Jerusalem, dedicated to preparing young men for college, business and life with a strong foundation in Torah and <i>misvot</i>. Rooted in the rich traditions of Aram Soba, we strive to cultivate future leaders, Bnei Torah, who will carry their experience of living and learning in Eres Yisrael into every aspect of their lives.</p>
-    <div class="acts"><a class="btn gold" href="https://youtu.be/kgOrJJNiYM8">WATCH OUR VIDEO</a><a class="btn line" href="/application">APPLY</a></div>
+    <div class="acts"><a class="btn gold big" href="%s">APPLY NOW</a></div>
   </div>
 </section>
-<section class="band gold tight" aria-label="At a glance" style="margin-top:56px">
-  <div class="wrap facts">
-    <div class="fact"><b>Nachlaot, Jerusalem</b><span>The Shuk is a 5 minute walk</span></div>
-    <div class="fact"><b>College credit</b><span>YU S. Daniel Abraham partner</span></div>
-    <div class="fact"><b>Small groups</b><span>Interactive learning, close rabbis</span></div>
-    <div class="fact"><b>Sephardic heritage</b><span>Aram Soba traditions &amp; minhagim</span></div>
+<section class="band purple" aria-labelledby="pillars-h">
+  <div class="wrap">
+    <div class="h-center rv"><h2 class="h2" id="pillars-h">The Six Pillars of<br>Yeshivat Moreshet Yerushalayim</h2><div class="rule" aria-hidden="true"></div></div>
+    <div class="pillars">%s</div>
   </div>
 </section>
-<section aria-label="What makes Moreshet special">%s</section>
-<section class="band purple" aria-label="Alumni say">
+<section class="band lilac" aria-label="Alumni say">
   <div class="wrap"><div class="quotes" aria-live="polite">%s</div><div class="dots">%s</div>
   <p style="text-align:center;margin:26px 0 0"><a class="pill" href="/alumni">More from our alumni %s</a></p></div>
 </section>
 <section class="band tight">
   <div class="wrap partner rv"><img src="/media/61aadb413d-a4810d_b288fbf27e2e47c7aa38b3f219dd451e~.webp" alt="Yeshiva University S. Daniel Abraham Israel Program" width="84" height="84"><p style="margin:0;max-width:520px;font-weight:700;color:var(--purple)">Yeshivat Moreshet Yerushalayim is a proud partner of the Yeshiva University S. Daniel Abraham Israel Program.</p></div>
-</section>""" % (hero, rows, q, d, ARROW)
+</section>""" % (hero, APPLY, rows, q, d, ARROW)
     page("/index.html", "Home", "/", body)
 
 # ---------------------------------------------------------------- TEAM
@@ -209,11 +207,11 @@ def team_page():
         g = "madrichim" if p["section"] == "Madrichim" else "rabbis"
         role = "Head Madrich" if g == "madrichim" else p["role"]
         bio = " ".join(bios[str(i)][1:]).replace("\xa0", " ").strip()
-        groups[p["name"]] = dict(name=p["name"], role=role, group=g, img="/media/team/%s.webp" % slug(p["name"]), bio=bio)
+        groups[p["name"]] = dict(name=p["name"], role=role, group=g, img="/media/team2/%s.webp" % slug(p["name"]), bio=bio)
     lead = groups.pop("Rabbi Harold Sutton")
     staff = [dict(name="R’ Victor Mosseri", role="Director of Finance", group="staff", img="", ini="VM", bio="Director of Finance, Staff in America."),
              dict(name="Victor Dweck", role="Director of Marketing", group="staff", img="", ini="VD", bio="Director of Marketing, Staff in America.")]
-    people = list(groups.values()) + staff
+    people = list(groups.values())
     def last(n):
         n = n.replace("R’ ", "").replace("Rabbi ", "").replace("Dr. ", "")
         parts = n.split()
@@ -225,7 +223,8 @@ def team_page():
         ph = '<img src="%s" alt="" loading="lazy">' % p["img"] if p["img"] else '<span class="ini">%s</span>' % p["ini"]
         cards += """<button type="button" class="person" data-group="%s" data-name="%s" data-role="%s" data-img="%s" data-bio="%s"><span class="ph">%s</span><span class="nm">%s</span><span class="rl">%s</span><span class="more">ABOUT ⟶</span></button>""" % (
             p["group"], E(p["name"]), E(p["role"]), p["img"], E(p["bio"]), ph, E(p["name"]), E(p["role"]))
-    board = ["Ezra S. Ashkenazi, Co-Founder", "Isaac S. Chera", "Nathan M. Dweck", "Joey A. Franco", "Norman L. Jemal", "Solomon R. Mosseri", "Jesse Salem"]
+    board = ["Ezra S. Ashkenazi, Co-Founder", "Isaac S. Chera", "Nathan M. Dweck", "Joey A. Franco", "Norman L. Jemal", "Solomon R. Mosseri", "Joseph Oved", "Jesse Salem"]
+    staffhtml = "".join('<div class="st"><b>%s</b><span>%s</span></div>' % (E(s["name"]), E(s["role"])) for s in staff)
     body = """
 <section class="band lilac">
   <div class="wrap lead">
@@ -235,15 +234,12 @@ def team_page():
 </section>
 <section class="band purple" id="rabbis">
   <div class="wrap">
-    %s
-    <div class="filters" role="group" aria-label="Show">
-      <button type="button" data-filter="all" aria-pressed="true">Everyone</button>
-      <button type="button" data-filter="rabbis" aria-pressed="false">Rabbis and Teachers</button>
-      <button type="button" data-filter="madrichim" aria-pressed="false" id="madrichim">Madrichim</button>
-      <button type="button" data-filter="staff" aria-pressed="false" id="staff">Staff</button>
-    </div>
-    <div class="grid-team">%s</div>
+    <div class="h-center rv"><h2 class="h2">Our Team</h2><div class="rule" aria-hidden="true"></div><p class="az">(listed A–Z)</p></div>
+    <div class="grid-team" id="madrichim">%s</div>
   </div>
+</section>
+<section class="band purple tight" id="staff" style="padding-top:0">
+  <div class="wrap">%s<div class="staff rv">%s</div></div>
 </section>
 <section class="band lilac" id="board">
   <div class="wrap">%s<div class="board rv">%s</div></div>
@@ -252,7 +248,7 @@ def team_page():
   <div class="bio-in"><div class="ph" id="bio-ph"><img id="bio-img" src="" alt=""></div>
   <div class="tx"><h2 id="bio-name"></h2><div class="r" id="bio-role"></div><p id="bio-text"></p></div></div>
   <button type="button" class="x" id="bio-x" aria-label="Close"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
-</dialog>""" % (lead["img"], E(lead["bio"]), H("Our Team"), cards, H("Board of Trustees"), "<br>".join(E(b) for b in board))
+</dialog>""" % (lead["img"], E(lead["bio"]), cards, H("Staff in America", "h3"), staffhtml, H("Board of Trustees"), "<br>".join(E(b) for b in board))
     page("/team.html", "Our Team", "/team", body)
 
 # ---------------------------------------------------------------- STUDENT LIFE
@@ -271,12 +267,12 @@ SCHED_ROWS = [
     ("10:00PM", [("", 1, ""), ("", 1, ""), ("Basketball League", 1, ""), ("", 1, ""), ("Mishmar Dinner", 1, "break")], None),
 ]
 DAYS = {
-    "sun": [("7:45", "Shahrit, then breakfast", "t"), ("9:15", "Electives", ""), ("10:30", "Gemara Shiur", ""), ("12:45", "Parasha Shiur", ""), ("1:00", "Lunch break", "break"), ("3:20", "Minha", "t"), ("3:45", "Halakha Shiur", ""), ("5:15", "Independent Learning Groups", ""), ("6:30", "Dinner break", "break"), ("7:45", "Arbit", "t"), ("8:00", "Timely Topics", "")],
-    "mon": [("7:45", "Shahrit, then breakfast", "t"), ("9:15", "Electives", ""), ("10:30", "Gemara Shiur", ""), ("12:45", "Parasha Shiur", ""), ("1:00", "Lunch break", "break"), ("3:20", "Minha", "t"), ("3:45", "Halakha Shiur", ""), ("5:15", "Independent Learning Groups", ""), ("6:30", "Dinner break", "break"), ("7:45", "Arbit", "t"), ("8:00", "Gemara Bekiut", "")],
-    "tue": [("7:45", "Shahrit, then breakfast", "t"), ("9:15", "Electives", ""), ("10:30", "Gemara Shiur", ""), ("12:00", "Tur / Bet Yosef Shiur with Rabbi Alouf", ""), ("1:00", "Lunch break", "break"), ("4:00", "Minha", "t"), ("4:20", "Parashat HaShabuah", ""), ("5:15", "Pirke Abot", ""), ("6:00", "Dinner break", "break"), ("7:45", "Arbit", "t"), ("8:00", "Gemara Bekiut", ""), ("10:00", "Basketball League", "")],
-    "wed": [("7:45", "Shahrit, then breakfast", "t"), ("9:15", "Electives", ""), ("10:30", "Gemara Shiur", ""), ("12:00", "Tur / Bet Yosef Shiur with Rabbi Alouf", ""), ("1:00", "Lunch break", "break"), ("3:20", "Minha", "t"), ("3:45", "Halakha Shiur", ""), ("5:15", "Independent Learning Groups", ""), ("6:30", "Dinner break", "break"), ("7:45", "Arbit", "t"), ("8:00", "Gemara Bekiut", "")],
-    "thu": [("7:45", "Shahrit, then breakfast", "t"), ("9:15", "Electives", ""), ("10:30", "Gemara Shiur", ""), ("12:45", "Parasha Shiur", ""), ("1:00", "Lunch break", "break"), ("3:20", "Minha", "t"), ("3:45", "Halakha Shiur", ""), ("5:15", "Independent Learning Groups", ""), ("6:30", "Dinner break", "break"), ("7:45", "Arbit", "t"), ("8:00", "Gemara Bekiut", ""), ("9:15", "Mishmar Speaker", ""), ("10:00", "Mishmar Dinner", "break")],
-    "fri": [("7:45", "Shahrit, then breakfast", "t"), ("10:00", "Football League", "")],
+    "sun": [("7:45AM", "Shahrit followed by breakfast", "t"), ("9:15AM", "Electives", ""), ("10:30AM", "Gemara Shiur", ""), ("12:45PM", "Parasha Shiur", ""), ("1:00PM", "Lunch Break", "break"), ("3:20PM", "Minha", "t"), ("3:45PM", "Halakha Shiur", ""), ("5:15PM", "Independent Learning Groups", ""), ("6:30PM", "Dinner Break", "break"), ("7:45PM", "Arbit", "t"), ("8:00PM", "Timely Topics", "")],
+    "mon": [("7:45AM", "Shahrit followed by breakfast", "t"), ("9:15AM", "Electives", ""), ("10:30AM", "Gemara Shiur", ""), ("12:45PM", "Parasha Shiur", ""), ("1:00PM", "Lunch Break", "break"), ("3:20PM", "Minha", "t"), ("3:45PM", "Halakha Shiur", ""), ("5:15PM", "Independent Learning Groups", ""), ("6:30PM", "Dinner Break", "break"), ("7:45PM", "Arbit", "t"), ("8:00PM", "Gemara Bekiut", "")],
+    "tue": [("7:45AM", "Shahrit followed by breakfast", "t"), ("9:15AM", "Electives", ""), ("10:30AM", "Gemara Shiur", ""), ("12:00PM", "Tur / Bet Yosef Shiur with Rabbi Alouf", ""), ("1:00PM", "Lunch Break", "break"), ("4:00PM", "Minha", "t"), ("4:20PM", "Parashat HaShabuah", ""), ("5:15PM", "Pirke Abot", ""), ("6:00PM", "Dinner Break", "break"), ("7:45PM", "Arbit", "t"), ("8:00PM", "Gemara Bekiut", ""), ("10:00PM", "Basketball League", "")],
+    "wed": [("7:45AM", "Shahrit followed by breakfast", "t"), ("9:15AM", "Electives", ""), ("10:30AM", "Gemara Shiur", ""), ("12:00PM", "Tur / Bet Yosef Shiur with Rabbi Alouf", ""), ("1:00PM", "Lunch Break", "break"), ("3:20PM", "Minha", "t"), ("3:45PM", "Halakha Shiur", ""), ("5:15PM", "Independent Learning Groups", ""), ("6:30PM", "Dinner Break", "break"), ("7:45PM", "Arbit", "t"), ("8:00PM", "Gemara Bekiut", "")],
+    "thu": [("7:45AM", "Shahrit followed by breakfast", "t"), ("9:15AM", "Electives", ""), ("10:30AM", "Gemara Shiur", ""), ("12:45PM", "Parasha Shiur", ""), ("1:00PM", "Lunch Break", "break"), ("3:20PM", "Minha", "t"), ("3:45PM", "Halakha Shiur", ""), ("5:15PM", "Independent Learning Groups", ""), ("6:30PM", "Dinner Break", "break"), ("7:45PM", "Arbit", "t"), ("8:00PM", "Gemara Bekiut", ""), ("9:15PM", "Mishmar Speaker", ""), ("10:00PM", "Mishmar Dinner", "break")],
+    "fri": [("7:45AM", "Shahrit followed by breakfast", "t"), ("10:00AM", "Football League", "")],
 }
 EVENTS = ["Three Day Eilat Trip", "Hebron Shabbaton", "Safed Shabbaton", "Gush Etzion Shabbaton", "Hiking Masada", "Yam LeYam", "Selihot at the Kotel",
           "Tour of City of David", "Kotel Tunnels", "Kayaking Trip", "Yom HaAsmaut Celebrations", "Yom Yerushalayim Celebrations", "Purim Parties", "Hanukkah Parties",
@@ -295,8 +291,8 @@ def student_life():
         rows += "<tr><th scope='row'>%s</th>%s</tr>" % (tm, tds)
     table = "<table class='week rv'><caption class='sr'>Sample weekly schedule</caption>%s<tbody>%s</tbody></table>" % (thead, rows)
     tabs = "".join("<button type='button' role='tab' data-day='%s' aria-selected='false'>%s</button>" % (d, d.capitalize()) for d in DAYS)
-    lists = "".join("<ol class='daylist' data-day='%s' hidden>%s</ol>" % (d, "".join("<li class='%s'><b>%s</b>%s</li>" % ("k-break" if k == "break" else ("k-t" if k == "t" else ""), t, E(w)) for t, w, k in items)) for d, items in DAYS.items())
-    ev = "".join("<li class='rv%s'>%s</li>" % (" x-more" if i >= 8 else "", E(e)) for i, e in enumerate(EVENTS))
+    lists = "".join("<ol class='daylist' data-day='%s' hidden>%s</ol>" % (d, "".join("<li><b>%s</b>%s</li>" % (t, E(w)) for t, w, k in items)) for d, items in DAYS.items())
+    ev = "".join("<li class='rv'>%s</li>" % E(e) for e in EVENTS)
     body = """
 <section class="band" id="schedule">
   <div class="wrap">%s
@@ -306,12 +302,11 @@ def student_life():
 </section>
 <section class="band purple" id="events">
   <div class="wrap">%s<ul class="events">%s</ul>
-    <p style="text-align:center;margin:22px 0 0" class="show-phone"><button type="button" class="btn line" id="ev-more">Show all events</button></p>
   </div>
 </section>
 <section class="band lilac tight">
   <div class="wrap partner"><p style="margin:0;font-family:var(--serif);font-weight:800;font-size:24px">Code of Conduct</p><a class="btn gold" href="/codeofconduct">READ IT HERE</a></div>
-</section>""" % (H("Weekly Schedule", "h1"), tabs, table, lists,
+</section>""" % (H("Sample Weekly Schedule", "h1"), tabs, table, lists,
                  H("Special Events", "h2", '<p class="lede">See below for some of the tiyulim, holiday celebrations, Shabbatons and special events we try to plan for our students each year, combining to make the year an incredible experience.</p>'), ev)
     page("/student-life.html", "Student Life", "/student-life", body)
 
@@ -336,7 +331,8 @@ def campus():
 </section>
 <iframe class="map" title="Map: Korazin Street 22, Jerusalem" loading="lazy" src="https://maps.google.com/maps?q=Korazin%%20St%%2022%%2C%%20Jerusalem%%2C%%20Israel&amp;z=16&amp;output=embed"></iframe>
 <section class="band purple">
-  <div class="wrap">%s<div class="gallery">%s</div></div>
+  <div class="wrap">%s<div class="slider"><div class="gallery" id="campus-gal">%s</div>
+  <div class="slide-ctl"><button type="button" class="sl-prev" aria-label="Previous photo">‹</button><span class="sl-n" aria-live="polite"></span><button type="button" class="sl-next" aria-label="Next photo">›</button></div></div></div>
 </section>%s""" % (H("Location, Location, Location", "h1"), H("Snapshots of our Campus"), gallery(pages["campus"]["imgs"]), LIGHTBOX)
     page("/campus.html", "Campus", "/campus", body)
 
@@ -363,22 +359,12 @@ def application():
     </div>
   </div>
 </section>
-<section class="band purple">
-  <div class="wrap">%s
-    <div class="dates">
-      <div class="date"><b>[DATE]</b>Application deadline</div>
-      <div class="date"><b>[DATE]</b>Arrival in Jerusalem</div>
-      <div class="date"><b>[DATES]</b>Pesah break</div>
-      <div class="date"><b>[DATE]</b>Last day of the year</div>
-    </div>
-  </div>
-</section>
 <section class="band wash" id="checklist">
   <div class="wrap">%s
     <div class="progress"><span id="prog-n">0 done</span><span class="bar"><i id="prog-bar" style="width:0"></i></span></div>
     <div class="checks">%s</div>
   </div>
-</section>""" % (H("Application Steps", "h1"), APPLY, H("Key Dates"), H("Before You Fly", "h2", '<p class="lede">Please review the information below to ensure a smooth transition to an incredible year. Tick items off as you go; your checklist is remembered on this device.</p>'), cl)
+</section>""" % (H("Application Steps", "h1"), APPLY, H("Before You Fly", "h2", '<p class="lede">Please review the information below to ensure a smooth transition to an incredible year. Tick items off as you go; your checklist is remembered on this device.</p>'), cl)
     page("/application.html", "Application", "/application", body)
 
 # ---------------------------------------------------------------- MEDIA
@@ -392,12 +378,13 @@ def media():
         return 99
     cards = ""
     for m in sorted(mags, key=key):
-        title = m["lines"][0].replace("/", "").strip()
-        if title.startswith("Year in Review"):
-            title += " · " + m["lines"][1]
-        ded = " ".join(m["lines"][1:]) if not m["lines"][0].startswith("Year in Review") else ""
-        cards += """<div class="mag rv"><a href="%s" aria-label="Open %s"><img src="%s" alt="Cover of Moreshet Magazine %s" loading="lazy"></a><div class="t">%s</div>%s<a class="btn gold" href="%s">READ / DOWNLOAD</a></div>""" % (
-            m["pdf"], E(title), hires(m["img"], 800), E(title), E(title), ('<div class="d">%s</div>' % E(ded)) if ded else "", m["pdf"])
+        L = [x.replace("/", "").strip() for x in m["lines"]]
+        if L[0].startswith("Year in Review"):
+            title, sub, ded = L[0], L[1].replace("-", "–"), ""
+        else:
+            title, sub, ded = L[0], "Moreshet Magazine", " ".join(L[1:])
+        cards += """<article class="mag rv"><a class="cv" href="%s" aria-label="Read %s"><img src="%s" alt="Cover of %s" loading="lazy"></a><div class="mt"><h3 class="t">%s</h3><div class="s">%s</div>%s</div><a class="btn purple" href="%s">READ THIS ISSUE</a></article>""" % (
+            m["pdf"], E(title), hires(m["img"], 800), E(title), E(title), E(sub), ('<p class="d">%s</p>' % E(ded)) if ded else "", m["pdf"])
     ig = "".join('<a href="%s" aria-label="Open on Instagram"><img src="%s" alt="%s" loading="lazy"><span>%s</span></a>' % (p["link"], p["img"], E(p["caption"][:120]), E(p["date"] or "")) for p in insta)
     body = """
 <section class="band lilac" id="shiurim">
@@ -406,14 +393,14 @@ def media():
     <p style="text-align:center;margin:24px 0 0"><a class="btn gold" href="https://open.spotify.com/show/3qxWYUnkE2yQlAdpIBqewX">LISTEN ON SPOTIFY</a></p>
   </div>
 </section>
-<section class="band purple" id="magazine">
+<section class="band wash" id="magazine">
   <div class="wrap">%s<div class="mags">%s</div></div>
 </section>
 <section class="band" id="instagram">
   <div class="wrap">%s<div class="insta">%s</div>
   <p style="text-align:center;margin:24px 0 0"><a class="btn purple" href="%s">FOLLOW @MORESHET_YERUSHALAYIM</a></p></div>
 </section>""" % (H("Recorded Shiurim", "h1"),
-                 H("Moreshet Magazine", "h2", '<p class="lede">To sponsor an upcoming issue, contact <a style="color:#fff" href="mailto:office@moreshetyerushalayim.com">office@moreshetyerushalayim.com</a>.</p><a class="btn gold" href="https://docs.google.com/forms/d/e/1FAIpQLSe1nD46qdmTmh7BfT7m6Akg6kf49Y3-iHU5VHY8uCFwh-fwWQ/viewform">JOIN OUR MAILING LIST</a>'),
+                 H("Moreshet Magazine", "h2", '<p class="lede">To sponsor an upcoming issue, contact <a href="mailto:office@moreshetyerushalayim.com">office@moreshetyerushalayim.com</a>.</p><a class="btn gold" href="https://docs.google.com/forms/d/e/1FAIpQLSe1nD46qdmTmh7BfT7m6Akg6kf49Y3-iHU5VHY8uCFwh-fwWQ/viewform">JOIN OUR MAILING LIST</a>'),
                  cards, H("Follow us on Instagram"), ig, IG)
     page("/media.html", "Media", "/media", body)
 
@@ -432,7 +419,7 @@ def faq():
             (False, "I saw a lot of “free time” on the schedule. What do students usually do during that time?", "<p>Some use the time to learn. Others exercise in a nearby gym, unwind, spend time in beautiful Sacher Park, shop, or spend time with friends and family exploring Jerusalem through the eyes of a “local.”</p>"),
         ]),
         ("cost", "Cost &amp; Financial Aid", [
-            (True, "What does the year cost, and what is included?", "<p class='tbd'>[Answer needed: tuition, deposit, and what it covers.]</p>"),
+            (False, "What does the year cost?", "<p>Tuition is set each year, so it can change from year to year. Please reach out to the office at <a href='mailto:office@moreshetyerushalayim.com'>office@moreshetyerushalayim.com</a> for the current figures. Families also receive full cost details after applying.</p>"),
             (False, "Is financial aid available at Yeshivat Moreshet Yerushalayim?", "<p>Students enrolled in the <a href='https://www.yu.edu/israel-program'>Yeshiva University S. Daniel Abraham</a> program receive the same financial aid they would receive when attending an American university. In addition, there is some community-funded need-based tuition assistance available. For further details, please contact Harvey Shomer at <a href='mailto:harveyshomer@moreshetyerushalayim.com'>harveyshomer@moreshetyerushalayim.com</a>.</p>"),
         ]),
         ("life", "Daily Life", [
@@ -441,17 +428,16 @@ def faq():
             (False, "What are the dorms like?", "<p>Our dorms have between two and four students in a room with a bathroom attached. Dorms are cleaned by a cleaning crew on a regular basis. There is Wi-Fi access in all rooms.</p>"),
             (False, "How do we clean our clothes?", "<p>Every dorm has easy-to-use washing machines and dryers. There are also several laundry/dry cleaning establishments near the Yeshivah.</p>"),
             (False, "I've never packed for an entire year before. What do I bring?!", "<p>The first thing to remember is that you can buy things in Israel as well, so don’t worry. We recommend bringing no more than two suitcases; that’s all that will fit in the dorm room, and, in reality, is all you will need. You can buy linens etc. through a service like <a href='https://www.blanketexpressplus.com/'>Blanket Express</a>.</p><p>Here is our suggested packing list:</p>" + pack + "<p style='margin-top:12px'><b>Please do NOT bring x-box or other gaming consoles</b> as they are not permitted on the school's premises.</p>"),
-            (True, "What phone plan should my son get?", "<p>While you may choose any service you wish, we recommend using <a href='https://www.hotisraelsim.com/hot-mobile-Israel-sim-card'>HOTmobile</a>.</p>"),
+            (False, "What phone plan should my son get?", "<p>While you may choose any service you wish, we recommend using <a href='https://www.hotisraelsim.com/hot-mobile-Israel-sim-card'>HOTmobile</a>.</p>"),
         ]),
         ("safety", "Health &amp; Safety", [
             (False, "What is security like at Yeshivat Moreshet Yerushalayim?", "<p>All premises are under constant video surveillance. All dorms are locked at all times. Safety procedures are reviewed at the beginning of the year, including shelter locations. Most of our staff are armed, carrying guns. Our madrichim have served in the army, and continue to be called up for reserve duty. The student WhatsApp group allows us to maintain close contact in case of emergency.</p>"),
             (False, "What happens if my son has a medical emergency?", "<p>Every student is required to carry full medical insurance. The Yeshivah is visited weekly by a doctor, who is available for non-emergency issues. In case of emergency, your child will be accompanied by an adult member of the staff to the doctor/emergency room/hospital (as determined by emergency response personnel), and will not be left alone at any time. Of course, parents will be notified immediately.</p>"),
-            (True, "What medical insurance is required?", "<p>All students must carry full medical insurance while in attendance. If your American health insurance does not apply in Israel, please see <a href='https://www.aim.co.il/apply-now'>AIM</a>.</p>"),
+            (False, "What medical insurance is required?", "<p>All students must carry full medical insurance while in attendance. If your American health insurance does not apply in Israel, please see <a href='https://www.aim.co.il/apply-now'>AIM</a>.</p>"),
         ]),
         ("parents", "Parents &amp; Travel", [
             (False, "Can I visit my son in Israel during the year?", "<p>Yes! We would love to have you join us for some of the learning as well! We just ask that you inform us prior to coming, and that you abide by the procedures specified in the <a href='/codeofconduct'>Code of Conduct</a> for visits.</p>"),
-            (True, "When does the year start and end? When are the breaks?", "<p class='tbd'>[Answer needed: arrival date, Sukkot and Pesah breaks, last day.]</p>"),
-            (True, "How do parents stay updated during the year?", "<p class='tbd'>[Answer needed: e.g. parent WhatsApp group, photos, Moreshet Magazine.]</p>"),
+            (False, "How do parents stay updated during the year?", "<p>There are several ways to stay connected:</p><ul><li>Follow us on Instagram, <a href='https://www.instagram.com/moreshet_yerushalayim/'>@moreshet_yerushalayim</a>, for photos and highlights from the year.</li><li>A WhatsApp group strictly for parents to communicate with one another.</li><li>Our updates WhatsApp group for announcements from the Yeshivah.</li><li><a href='/media#magazine'>Moreshet Magazine</a>, with stories and photos from the year.</li></ul><p>To be added to the WhatsApp groups, contact <a href='mailto:office@moreshetyerushalayim.com'>office@moreshetyerushalayim.com</a>.</p>"),
         ]),
     ]
     secs = ""
