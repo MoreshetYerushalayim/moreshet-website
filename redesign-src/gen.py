@@ -112,7 +112,7 @@ def page(path, title, cur, body, desc="Yeshivat Moreshet Yerushalayim, a Sephard
 <link rel="icon" href="%s">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&family=Roboto+Serif:opsz,wght@8..144,600;8..144,700;8..144,800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/rd.css?v=8">
+<link rel="stylesheet" href="/assets/rd.css?v=9">
 </head>
 <body>
 %s
@@ -120,7 +120,7 @@ def page(path, title, cur, body, desc="Yeshivat Moreshet Yerushalayim, a Sephard
 %s
 </main>
 %s
-<script src="/assets/rd.js?v=8" defer></script>
+<script src="/assets/rd.js?v=9" defer></script>
 </body>
 </html>
 """ % (E(title), E(desc), LOGO, header(cur), body, FOOTER)
@@ -184,6 +184,9 @@ def home():
     for n, (t, img, p, ded) in enumerate(pil):
         rows += """<details class="pil rv" name="pillars"%s><summary><span class="num">%d</span><span class="pt">%s</span></summary><div class="pa"><p>%s</p>%s</div></details>""" % (
             "", n + 1, t, E(p), ('<p class="ded">%s</p>' % ded) if ded else "")
+    tabs = "".join('<button type="button" role="tab" aria-selected="%s" data-pd="%d"><span class="num">%d</span>%s</button>' % ("true" if n == 0 else "false", n, n + 1, t) for n, (t, img, p, ded) in enumerate(pil))
+    panels = "".join('<div class="pd-panel" role="tabpanel" data-pd="%d"%s><img src="%s" alt="" loading="lazy"><div class="pd-tx"><h3>%s</h3><p>%s</p>%s</div></div>' % (n, "" if n == 0 else " hidden", hires(img, 1400), t, E(p), ('<p class="ded">%s</p>' % ded) if ded else "") for n, (t, img, p, ded) in enumerate(pil))
+    desk = '<div class="pil-desk"><div class="pd-list" role="tablist" aria-label="The six pillars">%s</div><div class="pd-panels">%s</div></div>' % (tabs, panels)
     quotes = [
         ("Over two incredible years at Yeshivat Moreshet Yerushalayim, I didn’t just learn Torah. I found a home, mentors I trust, and friendships that last forever.", "Sol Terzi, Class of 2025"),
         ("To me, Yeshivat Moreshet Yerushalayim was more than a year in Israel. It’s a lifetime investment that I continuously find paying returns throughout life.", "Ely Mamiye, Class of 2023"),
@@ -204,10 +207,10 @@ def home():
 <section class="band purple" aria-labelledby="pillars-h">
   <div class="wrap">
     <div class="h-center rv"><h2 class="h2" id="pillars-h">The Six Pillars of<br>Yeshivat Moreshet Yerushalayim</h2><div class="rule" aria-hidden="true"></div></div>
-    <div class="pillars">%s</div>
+    <div class="pillars">%s</div>%s
   </div>
 </section>
-%s""" % (hero, APPLY, rows, quotes_band(True))
+%s""" % (hero, APPLY, rows, desk, quotes_band(True))
     page("/index.html", "Home", "/", body)
 
 # ---------------------------------------------------------------- TEAM
@@ -296,7 +299,7 @@ def student_life():
         if i == 0:
             tds += "<td>Shahrit followed by breakfast</td>"
         elif i == 1:
-            tds += "<td rowspan='11'><small>10:00AM</small>Football League</td>"
+            tds += "<td rowspan='11' class='fri-top'><small>10:00AM</small>Football League</td>"
         rows += "<tr><th scope='row'>%s</th>%s</tr>" % (tm, tds)
     table = "<table class='week rv'><caption class='sr'>Sample weekly schedule</caption>%s<tbody>%s</tbody></table>" % (thead, rows)
     tabs = "".join("<button type='button' role='tab' data-day='%s' aria-selected='false'>%s</button>" % (d, d.capitalize()) for d in DAYS)
@@ -314,7 +317,7 @@ def student_life():
   </div>
 </section>
 <section class="band lilac tight">
-  <div class="wrap partner"><p style="margin:0;font-family:var(--serif);font-weight:800;font-size:24px">Code of Conduct</p><a class="btn gold" href="/codeofconduct">READ IT HERE</a></div>
+  <div class="wrap partner"><p style="margin:0;font-family:var(--serif);font-weight:800;font-size:24px">Code of Conduct</p><a class="btn gold" href="/codeofconduct">CLICK HERE</a></div>
 </section>""" % (H("Sample Weekly Schedule", "h1"), tabs, table, lists,
                  H("Special Events", "h2", '<p class="lede">See below for some of the tiyulim, holiday celebrations, Shabbatons and special events we try to plan for our students each year, combining to make the year an incredible experience.</p>'), ev)
     page("/student-life.html", "Student Life", "/student-life", body)
@@ -473,10 +476,10 @@ def alumni():
     lg = "".join('<li class="rv"><img src="%s" alt="Organization our alumni support" loading="lazy"></li>' % a for a in logos)
     body = """
 <section class="band purple" id="giving"><div class="wrap">%s<ul class="logos">%s</ul></div></section>
-<section class="band wash" id="transcript"><div class="wrap">%s<p style="text-align:center;margin:0"><a class="btn purple" href="%s">CLICK HERE TO REQUEST</a></p></div></section>
+<section class="band wash" id="transcript"><div class="wrap">%s<p style="text-align:center;margin:0"><a class="btn purple" href="%s">FILL OUT THE REQUEST FORM</a></p></div></section>
 %s""" % (
         H("Our Alumni", "h1", '<p class="lede">Our alumni love to give back. Here are just a few places where they have made an impact since their year at Yeshivat Moreshet Yerushalayim:</p>'), lg,
-        H("Request a Transcript"), "https://docs.google.com/forms/d/e/1FAIpQLSdHzK1cipmzxFaKg4R-G5xciw-eaU1EetRMIppaGByibHWEVQ/viewform", quotes_band(False))
+        H("Request a Transcript", "h2", '<p class="lede">Need an official transcript sent to a college or university? Fill out our short form and our office will take care of it.</p>'), "https://docs.google.com/forms/d/e/1FAIpQLSdHzK1cipmzxFaKg4R-G5xciw-eaU1EetRMIppaGByibHWEVQ/viewform", quotes_band(False))
     page("/alumni.html", "Alumni", "/alumni", body)
 
 # ---------------------------------------------------------------- DONATE

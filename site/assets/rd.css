@@ -524,3 +524,68 @@ dialog.bio .bio-in .ph img{border-radius:50%;width:100%;height:auto;aspect-ratio
   .logos{grid-template-columns:repeat(6,minmax(0,1fr))!important;max-width:1000px}
 }
 @media (min-width:821px){.grid-team .person{align-items:center;text-align:center}}
+/* desktop round 2 (computers only) */
+.pil-desk{display:none}
+@media (min-width:821px){
+  /* hero: whole photo, mission box under it */
+  .hero-img{height:auto!important;aspect-ratio:auto;max-height:none}
+  .hero-box{margin:0 auto!important;max-width:none;width:100%;background:var(--purple);padding:40px max(40px,calc((100% - 880px)/2)) 46px!important}
+  /* pillars: list on the left, photo + text on the right */
+  .pillars{display:none}
+  .pil-desk{display:grid;grid-template-columns:340px minmax(0,1fr);gap:36px;max-width:1100px;margin:0 auto;align-items:start}
+  .pd-list{display:flex;flex-direction:column;border-top:1px solid rgba(255,255,255,.25)}
+  .pd-list button{display:flex;align-items:center;gap:16px;text-align:left;background:none;border:0;border-bottom:1px solid rgba(255,255,255,.25);padding:18px 12px;color:var(--white);font-family:var(--serif);font-weight:800;font-size:20px;cursor:pointer;line-height:1.25}
+  .pd-list button .num{font-size:28px;color:var(--gold);width:30px;flex:0 0 30px;text-align:center}
+  .pd-list button:hover{background:rgba(255,255,255,.06)}
+  .pd-list button[aria-selected="true"]{background:var(--gold);color:var(--purple)}
+  .pd-list button[aria-selected="true"] .num{color:var(--purple)}
+  .pd-panel img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;border-bottom:6px solid var(--gold)}
+  .pd-tx{background:rgba(255,255,255,.06);padding:26px 30px 28px;color:#EFE9F5}
+  .pd-tx h3{margin:0 0 10px;font-family:var(--serif);font-weight:800;font-size:28px;color:var(--gold)}
+  .pd-tx p{margin:0 0 10px;font-size:17px;line-height:1.65}
+  .pd-tx .ded{font-family:var(--serif);font-weight:600;color:var(--gold-2)}
+  .pd-tx .ded a{color:inherit}
+  /* footer: no logo, two columns centered, icons above copyright */
+  .ftr img.logo{display:none!important}
+  .ftr .wrap{grid-template-columns:repeat(2,minmax(0,360px))!important;justify-content:center;grid-template-areas:"isr usa" "soc soc" "copy copy"!important;column-gap:80px;text-align:center}
+  .ftr .col:nth-of-type(1){margin-bottom:0}
+  .ftr .soc{justify-content:center;margin-top:8px!important}
+  /* team: names, positions and View Bio line up across each row; last row centered */
+  .grid-team{display:grid!important;grid-template-columns:repeat(8,minmax(0,1fr));column-gap:28px;row-gap:28px!important}
+  .grid-team .person{display:grid!important;grid-column:span 2;grid-row:span 4;grid-template-rows:subgrid;width:auto;flex:none;justify-items:center;text-align:center;row-gap:6px}
+  .grid-team .person:nth-child(4n+1):nth-last-child(2){grid-column:3/span 2}
+  .grid-team .person:nth-child(4n+1):nth-last-child(3){grid-column:2/span 2}
+  .grid-team .person:nth-child(4n+1):nth-last-child(1){grid-column:4/span 2}
+  .grid-team .person .nm,.grid-team .person .rl{text-align:center;width:100%}
+  .grid-team .person .more{margin-top:0;align-self:end}
+  /* bio: rectangle photo on gold, fills the left side */
+  dialog.bio{max-width:900px}
+  dialog.bio .bio-in{grid-template-columns:320px minmax(0,1fr);min-height:400px}
+  dialog.bio .bio-in .ph{padding:0!important;display:block!important;background:var(--gold)}
+  dialog.bio .bio-in .ph img{border-radius:0!important;width:100%!important;height:100%!important;aspect-ratio:auto!important;object-fit:cover;object-position:50% 0;display:block}
+  dialog.bio .bio-in .tx{justify-content:center;padding:40px 44px}
+  .board{max-width:900px;white-space:nowrap}
+  /* schedule: equal day columns, Friday football at the top */
+  .week{table-layout:fixed}
+  .week thead th:first-child{width:96px}
+  .week td.fri-top{vertical-align:top;padding-top:16px}
+  /* continuous photo strips */
+  .slider .gallery{scroll-snap-type:none!important}
+  /* memorial portrait fills its gold frame */
+  .memorial .ph{padding:0!important;background:none!important;border:8px solid var(--gold)}
+  .memorial .ph img{display:block;width:100%;height:auto}
+  /* FAQ: more color */
+  body:has(.faq) main > .band:first-child{background:var(--wash,#F3EEF8)}
+  .faq [data-cat]{background:var(--white);margin:0 0 26px;border-top:6px solid var(--gold);box-shadow:0 2px 0 rgba(75,36,110,.08)}
+  .faq h3{margin:0!important;background:var(--purple);color:var(--gold)!important;padding:14px 24px;font-size:22px}
+  .faq details{padding:0 24px}
+  .faq details:last-child{border-bottom:0}
+  .faq details[open]{background:#FBF8E6}
+  .faq details[open] summary{color:var(--purple)}
+  .faq-tools input{background:var(--white)}
+}
+@media (min-width:821px){
+  .memorial .ph{overflow:hidden}
+  .memorial .ph img{transform:scale(1.09)}
+  .ftr .wrap{align-items:start!important}
+}

@@ -43,6 +43,16 @@
     setInterval(function () { if (document.hidden) return; qs[qi].classList.remove('on'); qi = (qi + 1) % qs.length; qs[qi].classList.add('on'); }, 5000);
   }
 
+  /* home pillars on computers: list + photo panel */
+  var pdb = $$('.pd-list button');
+  pdb.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var k = b.getAttribute('data-pd');
+      pdb.forEach(function (x) { x.setAttribute('aria-selected', x === b ? 'true' : 'false'); });
+      $$('.pd-panel').forEach(function (pn) { pn.hidden = pn.getAttribute('data-pd') !== k; });
+    });
+  });
+
   /* home pillars: read more on phones */
   $$('.readmore').forEach(function (b) {
     b.addEventListener('click', function () {
@@ -65,13 +75,25 @@
     var next = function () { gal.scrollTo({ left: (cur() + 1) * step(), behavior: 'smooth' }); };
     gal.addEventListener('scroll', function () {
       clearTimeout(settle);
-      settle = setTimeout(function () { var c = cur(); if (c >= n) { gal.style.scrollSnapType = 'none'; gal.scrollLeft = (c - n) * step(); gal.offsetHeight; gal.style.scrollSnapType = ''; } }, 120);
+      settle = setTimeout(function () { if (desk.matches) return; var c = cur(); if (c >= n) { gal.style.scrollSnapType = 'none'; gal.scrollLeft = (c - n) * step(); gal.offsetHeight; gal.style.scrollSnapType = ''; } }, 120);
     }, { passive: true });
-    var restart = function () { clearInterval(auto); auto = setInterval(function () { if (!document.hidden) next(); }, 4000); };
+    var desk = window.matchMedia('(min-width:821px)'), hover = false, last = 0, pos = null;
+    gal.addEventListener('mouseenter', function () { hover = true; });
+    gal.addEventListener('mouseleave', function () { hover = false; pos = null; });
+    var flow = function (t) {
+      if (desk.matches && !hover && !document.hidden) {
+        var dt = last ? Math.min(t - last, 50) : 16;
+        if (pos === null) pos = gal.scrollLeft;
+        pos += dt * 0.04;
+        if (pos >= n * step()) pos -= n * step();
+        gal.scrollLeft = pos;
+      } else pos = null;
+      last = t; requestAnimationFrame(flow);
+    };
+    requestAnimationFrame(flow);
+    var restart = function () { clearInterval(auto); auto = setInterval(function () { if (!document.hidden && !desk.matches) next(); }, 4000); };
     gal.addEventListener('touchstart', function () { clearInterval(auto); }, { passive: true });
     gal.addEventListener('touchend', restart, { passive: true });
-    gal.addEventListener('mouseenter', function () { clearInterval(auto); });
-    gal.addEventListener('mouseleave', restart);
     restart();
   });
 
