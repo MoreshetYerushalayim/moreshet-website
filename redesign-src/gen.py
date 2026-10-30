@@ -112,7 +112,7 @@ def page(path, title, cur, body, desc="Yeshivat Moreshet Yerushalayim, a Sephard
 <link rel="icon" href="%s">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&family=Roboto+Serif:opsz,wght@8..144,600;8..144,700;8..144,800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/rd.css?v=9">
+<link rel="stylesheet" href="/assets/rd.css?v=10">
 </head>
 <body>
 %s
@@ -120,7 +120,7 @@ def page(path, title, cur, body, desc="Yeshivat Moreshet Yerushalayim, a Sephard
 %s
 </main>
 %s
-<script src="/assets/rd.js?v=9" defer></script>
+<script src="/assets/rd.js?v=10" defer></script>
 </body>
 </html>
 """ % (E(title), E(desc), LOGO, header(cur), body, FOOTER)
@@ -260,7 +260,7 @@ def team_page():
   <div class="bio-in"><div class="ph" id="bio-ph"><img id="bio-img" src="" alt=""></div>
   <div class="tx"><h2 id="bio-name"></h2><p id="bio-text"></p></div></div>
   <button type="button" class="x" id="bio-x" aria-label="Close"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
-</dialog>""" % (lead["img"], E(lead["bio"]), lead["img"], cards, H("Staff in America", "h3"), staffhtml, H("Board of Trustees"), "<br>".join(E(b) for b in board))
+</dialog>""" % (lead["img"], E(lead["bio"]), lead["img"], cards, H("Staff in America", "h3"), staffhtml, H("Board of Trustees"), "".join("<div>%s</div>" % E(b) for b in board))
     page("/team.html", "Our Team", "/team", body)
 
 # ---------------------------------------------------------------- STUDENT LIFE
@@ -436,7 +436,7 @@ def faq():
             (False, "How’s the food at Yeshivat Moreshet Yerushalayim and what meals are covered?", "<p>Our food is delicious! Three meals a day are included. Breakfast is available in all dorms and the Bet Midrash. Lunch and dinner are catered. We often have deluxe sponsored meals for Mishmars and Siyumim. On holidays and Shabbat, our traditional favorites are served.</p>"),
             (False, "What are the dorms like?", "<p>Our dorms have between two and four students in a room with a bathroom attached. Dorms are cleaned by a cleaning crew on a regular basis. There is Wi-Fi access in all rooms.</p>"),
             (False, "How do we clean our clothes?", "<p>Every dorm has easy-to-use washing machines and dryers. There are also several laundry/dry cleaning establishments near the Yeshivah.</p>"),
-            (False, "I've never packed for an entire year before. What do I bring?!", "<p>The first thing to remember is that you can buy things in Israel as well, so don’t worry. We recommend bringing no more than two suitcases; that’s all that will fit in the dorm room, and, in reality, is all you will need. You can buy linens etc. through a service like <a href='https://www.blanketexpressplus.com/'>Blanket Express</a>.</p><p>Here is our suggested packing list:</p>" + pack + "<p style='margin-top:12px'><b>Please do NOT bring x-box or other gaming consoles</b> as they are not permitted on the school's premises.</p>"),
+            (False, "I've never packed for an entire year before. What do I bring?!", "<p>The first thing to remember is that you can buy things in Israel as well, so don’t worry. We recommend bringing no more than two suitcases; that’s all that will fit in the dorm room, and, in reality, is all you will need. You can buy linens etc. through a service like <a href='https://www.blanketexpressplus.com/'>Blanket Express</a> or <a href='https://www.israelxpress.com/'>Israelxpress</a>.</p><p>Here is our suggested packing list:</p>" + pack + "<p style='margin-top:12px'><b>Please do NOT bring x-box or other gaming consoles</b> as they are not permitted on the school's premises.</p>"),
             (False, "What phone plan should my son get?", "<p>While you may choose any service you wish, we recommend using <a href='https://www.hotisraelsim.com/hot-mobile-Israel-sim-card'>HOTmobile</a>.</p>"),
         ]),
         ("safety", "Health &amp; Safety", [
@@ -454,7 +454,7 @@ def faq():
         secs += '<div data-cat="%s"><h3>%s</h3>' % (cat, title)
         for new, q, a in items:
             idattr = ' id="packing"' if q.startswith("I've never packed") else ""
-            secs += "<details%s><summary>%s%s</summary><div class='a'>%s</div></details>" % (idattr, E(q), "<span class='new'>NEW</span>" if new else "", a)
+            secs += "<details name='faq'%s><summary>%s%s</summary><div class='a'>%s</div></details>" % (idattr, E(q), "<span class='new'>NEW</span>" if new else "", a)
         secs += "</div>"
     topics = '<button type="button" data-topic="all" aria-pressed="true">All</button>' + "".join('<button type="button" data-topic="%s" aria-pressed="false">%s</button>' % (c, t) for c, t, _ in Q)
     body = """

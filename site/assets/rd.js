@@ -78,8 +78,6 @@
       settle = setTimeout(function () { if (desk.matches) return; var c = cur(); if (c >= n) { gal.style.scrollSnapType = 'none'; gal.scrollLeft = (c - n) * step(); gal.offsetHeight; gal.style.scrollSnapType = ''; } }, 120);
     }, { passive: true });
     var desk = window.matchMedia('(min-width:821px)'), hover = false, last = 0, pos = null;
-    gal.addEventListener('mouseenter', function () { hover = true; });
-    gal.addEventListener('mouseleave', function () { hover = false; pos = null; });
     var flow = function (t) {
       if (desk.matches && !hover && !document.hidden) {
         var dt = last ? Math.min(t - last, 50) : 16;
@@ -178,6 +176,15 @@
     });
     upd();
   }
+
+  /* FAQ: one answer open at a time; open the one a link points to */
+  var fds = $$('.faq details');
+  fds.forEach(function (d) { d.addEventListener('toggle', function () { if (d.open) fds.forEach(function (o) { if (o !== d) o.open = false; }); }); });
+  var openHash = function () {
+    var id = decodeURIComponent(location.hash.slice(1)); if (!id) return;
+    var t = document.getElementById(id); if (t && t.tagName === 'DETAILS') { t.open = true; setTimeout(function () { t.scrollIntoView({ block: 'start' }); }, 50); }
+  };
+  openHash(); window.addEventListener('hashchange', openHash);
 
   /* FAQ search + topic filter */
   var fq = $('#faq-q');
