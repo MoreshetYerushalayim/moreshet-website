@@ -491,3 +491,13 @@ dialog.bio .bio-in .ph img{border-radius:50%;width:100%;height:auto;aspect-ratio
 .ftr .wa-join{grid-area:wa}
 .ftr .wrap{grid-template-areas:"logo isr usa" "logo wa wa" "logo soc soc" "copy copy copy"}
 @media (max-width:820px){.ftr .wrap{grid-template-areas:"isr" "usa" "wa" "soc" "copy"}}
+/* round 4 */
+.quotes{display:grid;min-height:0!important}
+.quote{display:block!important;grid-area:1/1;opacity:0;visibility:hidden;transition:opacity .7s ease,visibility .7s}
+.quote.on{opacity:1;visibility:visible;animation:none}
+.quotes{align-items:center}
+.ftr .col:nth-of-type(1){margin-bottom:14px}
+.check .lk{font-weight:800}
+.check .lk a{font-weight:800}
+.grid-team .person{height:100%}
+.grid-team .person .more{margin-top:auto;padding-top:4px}

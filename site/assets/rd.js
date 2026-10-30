@@ -35,6 +35,13 @@
     rv.forEach(function (el) { io.observe(el); });
   } else rv.forEach(function (el) { el.classList.add('in'); });
 
+  /* alumni quotes: one at a time, 5 seconds each, loops */
+  var qs = $$('.quote');
+  if (qs.length > 1) {
+    var qi = 0;
+    setInterval(function () { if (document.hidden) return; qs[qi].classList.remove('on'); qi = (qi + 1) % qs.length; qs[qi].classList.add('on'); }, 5000);
+  }
+
   /* home pillars: read more on phones */
   $$('.readmore').forEach(function (b) {
     b.addEventListener('click', function () {

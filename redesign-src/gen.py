@@ -44,7 +44,7 @@ NAV = [
     ("Application", "/application", [("Application Steps", "/application#steps"), ("Before You Fly", "/application#checklist"), ("Visa Information", "/visainformation")]),
     ("Media", "/media", [("Recorded Shiurim", "/media#shiurim"), ("Moreshet Magazine", "/media#magazine"), ("Instagram", "/media#instagram")]),
     ("FAQ", "/faq", []),
-    ("Alumni", "/alumni", [("Testimonials", "/alumni#testimonials"), ("Giving Back", "/alumni#giving"), ("Request a Transcript", "/alumni#transcript")]),
+    ("Alumni", "/alumni", [("Giving Back", "/alumni#giving"), ("Request a Transcript", "/alumni#transcript"), ("Testimonials", "/alumni#testimonials")]),
     ("Donate", "/donate", []),
 ]
 LOGO = "/media/rd/logo.webp"
@@ -90,7 +90,6 @@ FOOTER = """
     <img class="logo" src="%(logo)s" alt="" width="150" height="150">
     <div class="col"><b>ISRAEL</b>Yeshivat Moreshet Yerushalayim<br>Korazin Street 22, Jerusalem, Israel<br><a href="mailto:Office@moreshetyerushalayim.com">Office@moreshetyerushalayim.com</a></div>
     <div class="col"><b>AMERICA / BUSINESS OFFICE</b>American Friends of Yeshivat Moreshet Yerushalayim<br>1385 Broadway, 16th Floor, NY, NY 10018<br><a href="mailto:vmosseri@moreshetyerushalayim.com">vmosseri@moreshetyerushalayim.com</a></div>
-    <a class="wa-join" href="%(wa)s">Join our updates WhatsApp group</a>
     <div class="soc"><a href="%(wa)s" aria-label="WhatsApp">%(wasvg)s</a><a href="%(ig)s" aria-label="Instagram">%(igsvg)s</a></div>
     <div class="copy">© Yeshivat Moreshet Yerushalayim</div>
   </div>
@@ -113,7 +112,7 @@ def page(path, title, cur, body, desc="Yeshivat Moreshet Yerushalayim, a Sephard
 <link rel="icon" href="%s">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&family=Roboto+Serif:opsz,wght@8..144,600;8..144,700;8..144,800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/rd.css?v=3">
+<link rel="stylesheet" href="/assets/rd.css?v=4">
 </head>
 <body>
 %s
@@ -121,7 +120,7 @@ def page(path, title, cur, body, desc="Yeshivat Moreshet Yerushalayim, a Sephard
 %s
 </main>
 %s
-<script src="/assets/rd.js?v=3" defer></script>
+<script src="/assets/rd.js?v=4" defer></script>
 </body>
 </html>
 """ % (E(title), E(desc), LOGO, header(cur), body, FOOTER)
@@ -158,12 +157,11 @@ ALUMNI_Q = [("A big thing for me was seeing the history of Israel through actual
      ("Yeshivat Moreshet Yerushalayim offers the once in a lifetime opportunity to live in Israel while learning from some of the top rabbis in the community. It lets you grow into who you want to be and have a great time doing it.", "Sam Setton", "Class of 2026")]
 
 def quotes_band(link=True):
-    one = "".join('<figure class="qcard"><p>“%s”</p><cite>%s, %s</cite></figure>' % (E(q), E(n), E(c)) for q, n, c in ALUMNI_Q)
-    two = one.replace('<figure class="qcard">', '<figure class="qcard" aria-hidden="true">')
+    one = "".join('<figure class="quote%s"><p>“%s”</p><cite>%s, %s</cite></figure>' % (" on" if i == 0 else "", E(q), E(n), E(c)) for i, (q, n, c) in enumerate(ALUMNI_Q))
     more = '<p style="text-align:center;margin:26px 0 0"><a class="pill" href="/alumni">More about our alumni %s</a></p>' % ARROW if link else ""
-    return """<section class="band lilac qband" aria-label="What our alumni say">
-  <div class="marquee"><div class="track">%s%s</div></div>%s
-</section>""" % (one, two, ('<div class="wrap">%s</div>' % more) if more else "")
+    return """<section class="band lilac" id="testimonials" aria-label="What our alumni say">
+  <div class="wrap"><div class="quotes" aria-live="polite">%s</div>%s</div>
+</section>""" % (one, more)
 
 def home():
     hero = hires("/media/118bc2130c-a4810d_e78af485456e483c9c7ed59a2e5bc954~.webp", 2000)
@@ -240,12 +238,12 @@ def team_page():
     body = """
 <section class="band lilac">
   <div class="wrap lead">
-    <button type="button" class="person leadp rv" data-name="Rabbi Harold Sutton" data-img="%s" data-bio="%s"><span class="ph"><img src="%s" alt=""></span><span class="kicker">ROSH YESHIVAH · FOUNDER</span><h1 class="nm">Rabbi Harold Sutton</h1><span class="more">VIEW BIO ⟶</span></button>
+    <button type="button" class="person leadp rv" data-name="Rabbi Harold Sutton" data-img="%s" data-bio="%s"><span class="ph"><img src="%s" alt=""></span><span class="kicker">ROSH YESHIVAH &amp; FOUNDER</span><h1 class="nm">Rabbi Harold Sutton</h1><span class="more">VIEW BIO ⟶</span></button>
   </div>
 </section>
 <section class="band purple" id="rabbis">
   <div class="wrap">
-    <div class="h-center rv"><h2 class="h2">Our Team</h2><div class="rule" aria-hidden="true"></div><p class="az">(listed A–Z)</p><p class="tap">Tap a photo to read a bio</p></div>
+    <div class="h-center rv"><h2 class="h2">Our Team</h2><div class="rule" aria-hidden="true"></div><p class="az">(listed in alphabetical order)</p></div>
     <div class="grid-team" id="madrichim">%s</div>
   </div>
 </section>
@@ -352,13 +350,12 @@ def application():
         ("visa", "Student visa", "You will be processed for a student visa shortly after the school year begins. Enter Israel on an ETA-IL.", "/visainformation", "Visa information"),
         ("insurance", "Medical insurance", "All students must carry full medical insurance. If your American health insurance does not apply in Israel, please see AIM.", "https://www.aim.co.il/apply-now", "AIM application"),
         ("phone", "Israeli phone", "While you may choose any service you wish, we recommend using HOTmobile.", "https://www.hotisraelsim.com/hot-mobile-Israel-sim-card", "HOTmobile"),
-        ("linen", "Linens &amp; towels (optional)", "Order linen, towels and more delivered to the Yeshivah (Korazin 22, Jerusalem). Have it arrive one day before you do.", "https://www.blanketexpressplus.com/", "Blanket Express"),
-        ("linen2", "Or: Israelxpress", "Another linen service with delivery directly to the Yeshivah.", "https://www.israelxpress.com/", "Israelxpress"),
+        ("linen", "Linens &amp; towels (optional)", "Order linen, towels and more delivered to the Yeshivah (Korazin 22, Jerusalem). Have it arrive one day before you do.", "", '<a href="https://www.blanketexpressplus.com/">Blanket Express</a> or <a href="https://www.israelxpress.com/">Israelxpress</a>'),
         ("room", "Roommate request", "We will try to accommodate everyone's request, but there is no guarantee every request can be met.", "https://docs.google.com/forms/d/e/1FAIpQLSeQwzgiTFlOOXJJTMf_Uu23mfzYWKCFMCwvDDBIi0opVGKyiw/viewform", "Roommate request form"),
         ("pack", "Pack (no more than two suitcases)", "That is all that fits in a dorm room. Weekday, Shabbat, trip and miscellaneous lists are in the FAQ.", "/faq#packing", "Packing list"),
         ("conduct", "Read the Code of Conduct", "Including curfew, leaving the Yeshivah and visits.", "/codeofconduct", "Code of Conduct"),
     ]
-    cl = "".join("""<div class="check rv"><div><b class="ct">%s</b><p>%s</p><a href="%s">%s ⟶</a></div></div>""" % (t, d, h, l) for i, t, d, h, l in checks)
+    cl = "".join("""<div class="check rv"><div><b class="ct">%s</b><p>%s</p>%s</div></div>""" % (t, d, ('<a href="%s">%s ⟶</a>' % (h, l)) if h else '<span class="lk">%s</span>' % l) for i, t, d, h, l in checks)
     body = """
 <section class="band wash" id="steps">
   <div class="wrap">%s
@@ -422,7 +419,7 @@ PACK = {"Weekday": ["Polo shirts", "Button down shirts", "School pants", "Underw
 def faq():
     pack = '<div class="pack">' + "".join("<div><b>%s</b>%s</div>" % (k, "<br>".join(E(x) for x in v)) for k, v in PACK.items()) + "</div>"
     Q = [
-        ("learning", "Learning &amp; Credit", [
+        ("learning", "Learning &amp; Credits", [
             (False, "Can students receive college credits upon completing the year at Yeshivat Moreshet Yerushalayim?", "<p>There are two options for students to receive college credits:</p><p>1) If a student is enrolled in the <a href='https://www.yu.edu/israel-program'>Yeshiva University S. Daniel Abraham program</a>, they automatically receive a full year of credit upon entering Yeshiva University.</p><p>2) An official transcript can be sent to any college or university. Note that it is that institution’s choice whether or not to grant transfer credit. For more information, please contact our registrar at <a href='mailto:office@moreshetyerushalayim.com'>office@moreshetyerushalayim.com</a>.</p>"),
             (False, "I’m excited to attend, but to be honest, the learning looks very intense. Does that mean Yeshivat Moreshet Yerushalayim isn’t for me?", "<p>Learning at Yeshivat Moreshet Yerushalayim is different from spending an entire day in school. Most learning takes place in interactive small groups, carefully designed to ensure a blend of abilities, interests and personalities. There are breaks throughout the day, allowing you to decompress and stretch, and return to the Bet Midrash refreshed and re-invigorated.</p>"),
             (False, "I saw a lot of “free time” on the schedule. What do students usually do during that time?", "<p>Some use the time to learn. Others exercise in a nearby gym, unwind, spend time in beautiful Sacher Park, shop, or spend time with friends and family exploring Jerusalem through the eyes of a “local.”</p>"),
