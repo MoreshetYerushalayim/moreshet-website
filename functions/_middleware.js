@@ -1,6 +1,4 @@
-// Cloudflare Pages middleware: phones get the phone layout at the SAME address,
-// exactly like Wix (which picks desktop or mobile layout from the browser type).
-const PHONE = /iPhone|iPod|Android.*Mobile|Windows Phone|BlackBerry|BB10|Opera Mini|IEMobile|webOS/i;
+// Redesign branch: one responsive page per address (no separate phone pages).
 
 // Magazine PDFs too large for one Cloudflare Pages file (25 MB limit) are stored as
 // numbered pieces in /_chunks/ and joined back together here, at their original Wix address.
@@ -35,29 +33,7 @@ function bigPdf(name, ctx) {
 }
 
 export async function onRequest(ctx) {
-  const url = new URL(ctx.request.url);
-  const p = url.pathname;
-  const m = p.match(/^\/_files\/ugd\/([^/]+\.pdf)$/);
+  const m = new URL(ctx.request.url).pathname.match(/^\/_files\/ugd\/([^/]+\.pdf)$/);
   if (m && BIG_PDFS[m[1]]) return bigPdf(m[1], ctx);
-  const ua = ctx.request.headers.get("user-agent") || "";
-  const isPage = !p.startsWith("/_m/") && !/\.[a-z0-9]+$/i.test(p);
-  if (!isPage) return ctx.next();
-  if (PHONE.test(ua)) {
-    const target = p === "/" ? "/_m/index" : "/_m" + p.replace(/\/$/, "");
-    let r = await ctx.env.ASSETS.fetch(new URL(target, url.origin));
-    let status = 200;
-    if (!r.ok) {
-      const real = await ctx.next();
-      if (real.status !== 404) return real; // e.g. redirects
-      r = await ctx.env.ASSETS.fetch(new URL("/_m/404", url.origin));
-      status = 404;
-    }
-    const h = new Headers(r.headers);
-    h.set("Vary", "User-Agent");
-    return new Response(r.body, { status, headers: h });
-  }
-  const res = await ctx.next();
-  const h = new Headers(res.headers);
-  h.set("Vary", "User-Agent");
-  return new Response(res.body, { status: res.status, headers: h });
+  return ctx.next();
 }
