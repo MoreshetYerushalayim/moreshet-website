@@ -185,7 +185,7 @@ def home():
         rows += """<details class="pil rv" name="pillars"%s><summary><span class="num">%d</span><span class="pt">%s</span></summary><div class="pa"><p>%s</p>%s</div></details>""" % (
             "", n + 1, t, E(p), ('<p class="ded">%s</p>' % ded) if ded else "")
     tabs = "".join('<button type="button" role="tab" aria-selected="%s" data-pd="%d"><span class="num">%d</span>%s</button>' % ("true" if n == 0 else "false", n, n + 1, t) for n, (t, img, p, ded) in enumerate(pil))
-    panels = "".join('<div class="pd-panel" role="tabpanel" data-pd="%d"%s><img src="%s" alt="" loading="lazy"><div class="pd-tx"><h3>%s</h3><p>%s</p>%s</div></div>' % (n, "" if n == 0 else " hidden", hires(img, 1400), t, E(p), ('<p class="ded">%s</p>' % ded) if ded else "") for n, (t, img, p, ded) in enumerate(pil))
+    panels = "".join('<div class="pd-panel" role="tabpanel" data-pd="%d"%s><img src="%s" alt="" loading="lazy"><div class="pd-tx"><p>%s</p>%s</div></div>' % (n, "" if n == 0 else " hidden", hires(img, 1400), E(p), ('<p class="ded">%s</p>' % ded) if ded else "") for n, (t, img, p, ded) in enumerate(pil))
     desk = '<div class="pil-desk"><div class="pd-list" role="tablist" aria-label="The six pillars">%s</div><div class="pd-panels">%s</div></div>' % (tabs, panels)
     quotes = [
         ("Over two incredible years at Yeshivat Moreshet Yerushalayim, I didn’t just learn Torah. I found a home, mentors I trust, and friendships that last forever.", "Sol Terzi, Class of 2025"),
