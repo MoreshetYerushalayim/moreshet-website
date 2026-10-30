@@ -8,10 +8,10 @@ export async function onRequestGet({ request, env, waitUntil }) {
   const key = new Request(new URL("/api/instagram?v=1", request.url).toString());
   const hit = await cache.match(key);
   if (hit) return hit;
-  if (!env.IG_TOKEN) return json({ error: "not configured", posts: [] }, 503);
+  if (!env.IG_TOKEN) return json({ error: "not configured", posts: [] }, 200);
   const api = `https://graph.facebook.com/v21.0/${IG_USER}/media?fields=${FIELDS}&limit=9&access_token=${encodeURIComponent(env.IG_TOKEN)}`;
   const r = await fetch(api);
-  if (!r.ok) return json({ error: "instagram " + r.status, posts: [] }, 502);
+  if (!r.ok) { let m = ""; try { m = (await r.json()).error.message; } catch (e) {} return json({ error: "instagram " + r.status + ": " + m, posts: [] }, 200); }
   const d = await r.json();
   const posts = (d.data || []).map(p => ({
     link: p.permalink,
