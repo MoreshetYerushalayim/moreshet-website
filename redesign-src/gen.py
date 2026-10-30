@@ -472,7 +472,7 @@ def alumni():
 <section class="band purple" id="giving"><div class="wrap">%s<ul class="logos">%s</ul></div></section>
 <section class="band wash" id="transcript"><div class="wrap">%s<p style="text-align:center;margin:0"><a class="btn purple" href="%s">CLICK HERE TO REQUEST</a></p></div></section>
 %s""" % (
-        H("Our Alumni", "h1", '<p class="lede">Our alumni love to give back. Here are just a few places they give back to:</p>'), lg,
+        H("Our Alumni", "h1", '<p class="lede">Our alumni love to give back. Here are just a few places where they have made an impact since their year at Yeshivat Moreshet Yerushalayim:</p>'), lg,
         H("Request a Transcript"), "https://docs.google.com/forms/d/e/1FAIpQLSdHzK1cipmzxFaKg4R-G5xciw-eaU1EetRMIppaGByibHWEVQ/viewform", quotes_band(False))
     page("/alumni.html", "Alumni", "/alumni", body)
 
