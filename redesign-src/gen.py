@@ -467,6 +467,9 @@ def faq():
 # ---------------------------------------------------------------- ALUMNI
 def alumni():
     logos = [a for a, b in pages["alumni_logos"]][1:]
+    NEW = ["bmg-medical-halacha", "jersey-shore-hatzalah", "makom-torah", "mitnadev-israel", "rochel-leah-chesed-fund", "shaare-zion", "zoa", "gesher", "kollel"]
+    for pos, n in zip([8, 11, 15, 19, 23, 27, 31, 36, 41], NEW):
+        logos.insert(pos - 1, "/media/alumni-%s.webp" % n)
     lg = "".join('<li class="rv"><img src="%s" alt="Organization our alumni support" loading="lazy"></li>' % a for a in logos)
     body = """
 <section class="band purple" id="giving"><div class="wrap">%s<ul class="logos">%s</ul></div></section>
