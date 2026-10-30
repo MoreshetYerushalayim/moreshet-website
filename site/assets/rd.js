@@ -43,13 +43,17 @@
     setInterval(function () { if (document.hidden) return; qs[qi].classList.remove('on'); qi = (qi + 1) % qs.length; qs[qi].classList.add('on'); }, 5000);
   }
 
-  /* home pillars on computers: list + photo panel */
-  var pdb = $$('.pd-list button');
-  pdb.forEach(function (b) {
+  /* home pillars on computers: photo tiles, wording opens under the clicked row */
+  var tiles = $$('.pt-tile'), ptp = $('#pt-panel');
+  tiles.forEach(function (b) {
     b.addEventListener('click', function () {
-      var k = b.getAttribute('data-pd');
-      pdb.forEach(function (x) { x.setAttribute('aria-selected', x === b ? 'true' : 'false'); });
-      $$('.pd-panel').forEach(function (pn) { pn.hidden = pn.getAttribute('data-pd') !== k; });
+      var k = +b.getAttribute('data-pd'), on = b.getAttribute('aria-expanded') !== 'true';
+      tiles.forEach(function (x) { x.setAttribute('aria-expanded', x === b && on ? 'true' : 'false'); });
+      ptp.hidden = !on;
+      if (on) {
+        ptp.classList.toggle('row2', k >= 3);
+        $$('.pt-tx', ptp).forEach(function (t) { t.hidden = +t.getAttribute('data-pd') !== k; });
+      }
     });
   });
 

@@ -112,7 +112,7 @@ def page(path, title, cur, body, desc="Yeshivat Moreshet Yerushalayim, a Sephard
 <link rel="icon" href="%s">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&family=Roboto+Serif:opsz,wght@8..144,600;8..144,700;8..144,800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/rd.css?v=10">
+<link rel="stylesheet" href="/assets/rd.css?v=11">
 </head>
 <body>
 %s
@@ -120,7 +120,7 @@ def page(path, title, cur, body, desc="Yeshivat Moreshet Yerushalayim, a Sephard
 %s
 </main>
 %s
-<script src="/assets/rd.js?v=10" defer></script>
+<script src="/assets/rd.js?v=11" defer></script>
 </body>
 </html>
 """ % (E(title), E(desc), LOGO, header(cur), body, FOOTER)
@@ -184,9 +184,9 @@ def home():
     for n, (t, img, p, ded) in enumerate(pil):
         rows += """<details class="pil rv" name="pillars"%s><summary><span class="num">%d</span><span class="pt">%s</span></summary><div class="pa"><p>%s</p>%s</div></details>""" % (
             "", n + 1, t, E(p), ('<p class="ded">%s</p>' % ded) if ded else "")
-    tabs = "".join('<button type="button" role="tab" aria-selected="%s" data-pd="%d"><span class="num">%d</span>%s</button>' % ("true" if n == 0 else "false", n, n + 1, t) for n, (t, img, p, ded) in enumerate(pil))
-    panels = "".join('<div class="pd-panel" role="tabpanel" data-pd="%d"%s><img src="%s" alt="" loading="lazy"><div class="pd-tx"><p>%s</p>%s</div></div>' % (n, "" if n == 0 else " hidden", hires(img, 1400), E(p), ('<p class="ded">%s</p>' % ded) if ded else "") for n, (t, img, p, ded) in enumerate(pil))
-    desk = '<div class="pil-desk"><div class="pd-list" role="tablist" aria-label="The six pillars">%s</div><div class="pd-panels">%s</div></div>' % (tabs, panels)
+    tiles = "".join('<button type="button" class="pt-tile" data-pd="%d" aria-expanded="false" aria-controls="pt-panel" style="order:%d"><img src="%s" alt="" loading="lazy"><span class="pt-cap"><span class="num">%d</span>%s</span></button>' % (n, 1 if n < 3 else 3, hires(img, 900), n + 1, t) for n, (t, img, p, ded) in enumerate(pil))
+    texts = "".join('<div class="pt-tx" data-pd="%d" hidden><h3><span class="num">%d</span>%s</h3><p>%s</p>%s</div>' % (n, n + 1, t, E(p), ('<p class="ded">%s</p>' % ded) if ded else "") for n, (t, img, p, ded) in enumerate(pil))
+    desk = '<div class="pil-desk">%s<div class="pt-panel" id="pt-panel" role="region" aria-live="polite" hidden>%s</div></div>' % (tiles, texts)
     quotes = [
         ("Over two incredible years at Yeshivat Moreshet Yerushalayim, I didn’t just learn Torah. I found a home, mentors I trust, and friendships that last forever.", "Sol Terzi, Class of 2025"),
         ("To me, Yeshivat Moreshet Yerushalayim was more than a year in Israel. It’s a lifetime investment that I continuously find paying returns throughout life.", "Ely Mamiye, Class of 2023"),
