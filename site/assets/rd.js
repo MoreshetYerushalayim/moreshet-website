@@ -38,7 +38,8 @@
   /* alumni quotes: one at a time, 5 seconds each, loops */
   var qs = $$('.quote');
   if (qs.length > 1) {
-    var qi = 0;
+    var qi = Math.floor(Math.random() * qs.length);
+    qs.forEach(function (q, i) { q.classList.toggle('on', i === qi); });
     setInterval(function () { if (document.hidden) return; qs[qi].classList.remove('on'); qi = (qi + 1) % qs.length; qs[qi].classList.add('on'); }, 5000);
   }
 

@@ -501,3 +501,14 @@ dialog.bio .bio-in .ph img{border-radius:50%;width:100%;height:auto;aspect-ratio
 .check .lk a{font-weight:800}
 .grid-team .person{height:100%}
 .grid-team .person .more{margin-top:auto;padding-top:4px}
+/* round 5 */
+.az{font-size:12px!important;letter-spacing:.04em;opacity:.85}
+.grid-team{row-gap:16px!important}
+.grid-team .person{display:grid;grid-row:span 4;grid-template-rows:subgrid;row-gap:6px;justify-items:center;align-content:start;background:rgba(255,255,255,.08);border:1px solid rgba(202,178,2,.45);border-radius:14px;padding:12px 8px 12px;height:auto}
+.grid-team .person .ph{width:100%}
+.grid-team .person .nm{align-self:start}
+.grid-team .person .rl{align-self:start;margin-top:0}
+.grid-team .person .more{align-self:end;margin-top:0;padding-top:4px}
+.grid-team .person:hover{border-color:var(--gold)}
+@supports not (grid-template-rows:subgrid){.grid-team .person{display:flex}}
+@media (min-width:821px){.grid-team{row-gap:28px!important}.grid-team .person{padding:18px 14px}}

@@ -38,7 +38,7 @@ def hires(local, w=1600):
 # ---------------------------------------------------------------- shared chrome
 NAV = [
     ("Home", "/", []),
-    ("Team", "/team", [("Rabbis and Teachers", "/team#rabbis"), ("Madrichim", "/team#madrichim"), ("Staff", "/team#staff"), ("Board of Trustees", "/team#board")]),
+    ("Team", "/team", []),
     ("Student Life", "/student-life", [("Weekly Schedule", "/student-life#schedule"), ("Special Events", "/student-life#events"), ("Code of Conduct", "/codeofconduct")]),
     ("Campus", "/campus", []),
     ("Application", "/application", [("Application Steps", "/application#steps"), ("Before You Fly", "/application#checklist"), ("Visa Information", "/visainformation")]),
@@ -112,7 +112,7 @@ def page(path, title, cur, body, desc="Yeshivat Moreshet Yerushalayim, a Sephard
 <link rel="icon" href="%s">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&family=Roboto+Serif:opsz,wght@8..144,600;8..144,700;8..144,800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/rd.css?v=4">
+<link rel="stylesheet" href="/assets/rd.css?v=5">
 </head>
 <body>
 %s
@@ -120,7 +120,7 @@ def page(path, title, cur, body, desc="Yeshivat Moreshet Yerushalayim, a Sephard
 %s
 </main>
 %s
-<script src="/assets/rd.js?v=4" defer></script>
+<script src="/assets/rd.js?v=5" defer></script>
 </body>
 </html>
 """ % (E(title), E(desc), LOGO, header(cur), body, FOOTER)
@@ -351,7 +351,6 @@ def application():
         ("insurance", "Medical insurance", "All students must carry full medical insurance. If your American health insurance does not apply in Israel, please see AIM.", "https://www.aim.co.il/apply-now", "AIM application"),
         ("phone", "Israeli phone", "While you may choose any service you wish, we recommend using HOTmobile.", "https://www.hotisraelsim.com/hot-mobile-Israel-sim-card", "HOTmobile"),
         ("linen", "Linens &amp; towels (optional)", "Order linen, towels and more delivered to the Yeshivah (Korazin 22, Jerusalem). Have it arrive one day before you do.", "", '<a href="https://www.blanketexpressplus.com/">Blanket Express</a> or <a href="https://www.israelxpress.com/">Israelxpress</a>'),
-        ("room", "Roommate request", "We will try to accommodate everyone's request, but there is no guarantee every request can be met.", "https://docs.google.com/forms/d/e/1FAIpQLSeQwzgiTFlOOXJJTMf_Uu23mfzYWKCFMCwvDDBIi0opVGKyiw/viewform", "Roommate request form"),
         ("pack", "Pack (no more than two suitcases)", "That is all that fits in a dorm room. Weekday, Shabbat, trip and miscellaneous lists are in the FAQ.", "/faq#packing", "Packing list"),
         ("conduct", "Read the Code of Conduct", "Including curfew, leaving the Yeshivah and visits.", "/codeofconduct", "Code of Conduct"),
     ]
@@ -420,8 +419,9 @@ def faq():
     pack = '<div class="pack">' + "".join("<div><b>%s</b>%s</div>" % (k, "<br>".join(E(x) for x in v)) for k, v in PACK.items()) + "</div>"
     Q = [
         ("learning", "Learning &amp; Credits", [
-            (False, "Can students receive college credits upon completing the year at Yeshivat Moreshet Yerushalayim?", "<p>There are two options for students to receive college credits:</p><p>1) If a student is enrolled in the <a href='https://www.yu.edu/israel-program'>Yeshiva University S. Daniel Abraham program</a>, they automatically receive a full year of credit upon entering Yeshiva University.</p><p>2) An official transcript can be sent to any college or university. Note that it is that institution’s choice whether or not to grant transfer credit. For more information, please contact our registrar at <a href='mailto:office@moreshetyerushalayim.com'>office@moreshetyerushalayim.com</a>.</p>"),
+            (False, "Who are the rabbis and teachers?", "<p>Many of our rabbis and teachers come from our own community. They grew up in it and lived in it, so they know our boys, our families and our way of life. They are joined by outstanding rabbis and teachers who live in Israel. Together they bring Torah to life for every student, in the Bet Midrash and well beyond it, with a personal connection that lasts long after the year ends.</p><p>For more on our rabbis and teachers, <a href='/team'>click here</a>.</p>"),
             (False, "I’m excited to attend, but to be honest, the learning looks very intense. Does that mean Yeshivat Moreshet Yerushalayim isn’t for me?", "<p>Learning at Yeshivat Moreshet Yerushalayim is different from spending an entire day in school. Most learning takes place in interactive small groups, carefully designed to ensure a blend of abilities, interests and personalities. There are breaks throughout the day, allowing you to decompress and stretch, and return to the Bet Midrash refreshed and re-invigorated.</p>"),
+            (False, "Can students receive college credits upon completing the year at Yeshivat Moreshet Yerushalayim?", "<p>There are two options for students to receive college credits:</p><p>1) If a student is enrolled in the <a href='https://www.yu.edu/israel-program'>Yeshiva University S. Daniel Abraham program</a>, they automatically receive a full year of credit upon entering Yeshiva University.</p><p>2) An official transcript can be sent to any college or university. Note that it is that institution’s choice whether or not to grant transfer credit. For more information, please contact our registrar at <a href='mailto:office@moreshetyerushalayim.com'>office@moreshetyerushalayim.com</a>.</p>"),
             (False, "I saw a lot of “free time” on the schedule. What do students usually do during that time?", "<p>Some use the time to learn. Others exercise in a nearby gym, unwind, spend time in beautiful Sacher Park, shop, or spend time with friends and family exploring Jerusalem through the eyes of a “local.”</p>"),
         ]),
         ("cost", "Cost &amp; Financial Aid", [
