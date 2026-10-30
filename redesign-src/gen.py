@@ -101,6 +101,7 @@ FOOTER = """
 </nav>""" % {"wa": WA, "ig": IG, "logo": LOGO, "wasvg": WA_SVG, "igsvg": IG_SVG, "hand": HAND_SVG, "apply": APPLY}
 
 def page(path, title, cur, body, desc="Yeshivat Moreshet Yerushalayim, a Sephardic post-high school yeshivah in Jerusalem."):
+    body = body.replace("@@SHIURIMG@@", hires("/media/715d03e73e-a4810d_972ab573c1c2477f8eb295cbe9d5e9f4~.webp", 1400)).replace("@@ALUMIMG@@", hires("/media/962328bc9d-a4810d_fc7aac0f587e4d468de8872709e12437~.webp", 1400))
     doc = """<!doctype html>
 <html lang="en">
 <head>
@@ -112,7 +113,7 @@ def page(path, title, cur, body, desc="Yeshivat Moreshet Yerushalayim, a Sephard
 <link rel="icon" href="%s">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&family=Roboto+Serif:opsz,wght@8..144,600;8..144,700;8..144,800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/rd.css?v=14">
+<link rel="stylesheet" href="/assets/rd.css?v=15">
 </head>
 <body>
 %s
@@ -396,10 +397,10 @@ def media():
     ig = "".join('<a href="%s" aria-label="Open on Instagram"><img src="%s" alt="%s" loading="lazy"><span>%s</span></a>' % (p["link"], p["img"], E(p["caption"][:120]), E(p["date"] or "")) for p in insta)
     body = """
 <section class="band lilac" id="shiurim">
-  <div class="wrap">%s
+  <div class="wrap shiur-wrap"><img class="shiur-img rv" src="@@SHIURIMG@@" alt="A student listening to a shiur with an earbud"><div class="shiur-tx">%s
     <p class="lede">Listen to recorded shiurim from our rabbis on Spotify. For sponsorship opportunities, contact <a style="color:#fff" href="mailto:Media@moreshetyerushalayim.com?subject=Sponsoring%%20Spotify%%20Class">Media@moreshetyerushalayim.com</a>.</p>
     <p style="text-align:center;margin:24px 0 0"><a class="btn gold" href="https://open.spotify.com/show/3qxWYUnkE2yQlAdpIBqewX">LISTEN ON SPOTIFY</a></p>
-  </div>
+  </div></div>
 </section>
 <section class="band wash" id="magazine">
   <div class="wrap">%s<div class="mags">%s</div></div>
@@ -475,7 +476,7 @@ def alumni():
         logos.insert(pos - 1, "/media/alumni-%s.webp" % n)
     lg = "".join('<li class="rv"><img src="%s" alt="Organization our alumni support" loading="lazy"></li>' % a for a in logos)
     body = """
-<section class="band purple" id="giving"><div class="wrap">%s<ul class="logos">%s</ul></div></section>
+<section class="band purple" id="giving"><div class="wrap">%s<img class="alum-img rv" src="@@ALUMIMG@@" alt="Alumni with Rabbi Harold Sutton"><ul class="logos">%s</ul></div></section>
 <section class="band wash" id="transcript"><div class="wrap">%s<p style="text-align:center;margin:0"><a class="btn purple" href="%s">FILL OUT THE REQUEST FORM</a></p></div></section>
 %s""" % (
         H("Our Alumni", "h1", '<p class="lede">Our alumni love to give back. Here are just a few places where they have made an impact since their year at Yeshivat Moreshet Yerushalayim:</p>'), lg,
