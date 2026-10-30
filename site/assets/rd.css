@@ -646,3 +646,10 @@ dialog.bio .bio-in .ph img{border-radius:50%;width:100%;height:auto;aspect-ratio
   .pt-panel{margin-top:4px}
   .pt-panel::before{top:-24px;margin-left:-24px;border-width:0 24px 20px;border-style:solid;border-color:transparent transparent var(--gold)}
 }
+@media (min-width:821px){
+  .pt-plus{background:none;box-shadow:none;width:26px;height:26px;bottom:16px}
+  .pt-plus::after{display:none}
+  .pt-plus::before{width:12px;height:12px;margin:-9px 0 0 -6px;background:none;border-radius:0;border-right:3px solid var(--gold);border-bottom:3px solid var(--gold);transform:rotate(45deg)}
+  .pt-tile:hover .pt-plus{transform:translateY(3px)}
+  .pt-tile[aria-expanded="true"] .pt-plus{transform:rotate(180deg)}
+}
