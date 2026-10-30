@@ -216,4 +216,19 @@
       });
     });
   }
+
+  /* live Instagram feed (falls back to the saved posts if it can't load) */
+  var igBox = $('.insta');
+  if (igBox && window.fetch) {
+    fetch('/api/instagram').then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+      if (!d || !d.posts || !d.posts.length) return;
+      igBox.innerHTML = '';
+      d.posts.slice(0, 9).forEach(function (p) {
+        var a = document.createElement('a'); a.href = p.link; a.setAttribute('aria-label', 'Open on Instagram');
+        var im = document.createElement('img'); im.src = p.img; im.alt = p.caption || 'Instagram post'; im.loading = 'lazy';
+        var sp = document.createElement('span'); sp.textContent = p.caption || '';
+        a.appendChild(im); a.appendChild(sp); igBox.appendChild(a);
+      });
+    }).catch(function () {});
+  }
 })();
