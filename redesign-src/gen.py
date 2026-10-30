@@ -113,7 +113,7 @@ def page(path, title, cur, body, desc="Yeshivat Moreshet Yerushalayim, a Sephard
 <link rel="icon" href="%s">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&family=Roboto+Serif:opsz,wght@8..144,600;8..144,700;8..144,800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/rd.css?v=16">
+<link rel="stylesheet" href="/assets/rd.css?v=17">
 </head>
 <body>
 %s
@@ -476,7 +476,7 @@ def alumni():
         logos.insert(pos - 1, "/media/alumni-%s.webp" % n)
     lg = "".join('<li class="rv"><img src="%s" alt="Organization our alumni support" loading="lazy"></li>' % a for a in logos)
     body = """
-<section class="band purple" id="giving"><div class="wrap"><img class="alum-img rv" src="@@ALUMIMG@@" alt="Alumni with Rabbi Harold Sutton">%s<ul class="logos">%s</ul></div></section>
+<section class="band purple" id="giving"><div class="wrap"><div class="alum-top"><img class="alum-img rv" src="@@ALUMIMG@@" alt="Alumni with Rabbi Harold Sutton"><div class="alum-h">%s</div></div><ul class="logos">%s</ul></div></section>
 <section class="band wash" id="transcript"><div class="wrap">%s<p style="text-align:center;margin:0"><a class="btn purple" href="%s">FILL OUT THE REQUEST FORM</a></p></div></section>
 %s""" % (
         H("Our Alumni", "h1", '<p class="lede">Our alumni love to give back. Here are just a few places where they have made an impact since their year at Yeshivat Moreshet Yerushalayim:</p>'), lg,

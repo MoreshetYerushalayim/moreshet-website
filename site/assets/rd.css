@@ -671,3 +671,9 @@ dialog.bio .bio-in .ph img{border-radius:50%;width:100%;height:auto;aspect-ratio
   .alum-img{max-width:900px!important;width:100%;aspect-ratio:21/8;object-fit:cover;object-position:50% 22%;margin:0 auto 34px;border:0;border-bottom:6px solid var(--gold)}
   .shiur-img{aspect-ratio:3/2!important;object-position:50% 0!important}
 }
+@media (min-width:821px){
+  .alum-top{display:grid;grid-template-columns:440px minmax(0,1fr);gap:44px;align-items:center;max-width:1000px;margin:0 auto 44px}
+  .alum-img{max-width:none!important;width:100%;aspect-ratio:auto!important;object-fit:contain;margin:0!important;border:0!important;border-left:6px solid var(--gold)!important}
+  .alum-h .h-center{text-align:left;align-items:flex-start}
+  .alum-h .h-center *{text-align:left;margin-left:0}
+}
