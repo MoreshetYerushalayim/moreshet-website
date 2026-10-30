@@ -113,7 +113,7 @@ def page(path, title, cur, body, desc="Yeshivat Moreshet Yerushalayim, a Sephard
 <link rel="icon" href="%s">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&family=Roboto+Serif:opsz,wght@8..144,600;8..144,700;8..144,800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/rd.css">
+<link rel="stylesheet" href="/assets/rd.css?v=3">
 </head>
 <body>
 %s
@@ -121,7 +121,7 @@ def page(path, title, cur, body, desc="Yeshivat Moreshet Yerushalayim, a Sephard
 %s
 </main>
 %s
-<script src="/assets/rd.js" defer></script>
+<script src="/assets/rd.js?v=3" defer></script>
 </body>
 </html>
 """ % (E(title), E(desc), LOGO, header(cur), body, FOOTER)
