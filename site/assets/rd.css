@@ -677,9 +677,9 @@ dialog.bio .bio-in .ph img{border-radius:50%;width:100%;height:auto;aspect-ratio
 }
 /* bio pop-up: same-size rectangle photo, zoomed out */
 dialog.bio .bio-in{align-items:start}
-dialog.bio .bio-in .ph{background:none;padding:36px 0 36px 36px;display:block;height:auto}
-dialog.bio .bio-in .ph img{display:block;width:244px;height:300px;aspect-ratio:auto;border-radius:0;background:var(--gold);object-fit:contain;object-position:50% 100%;padding:24px 0 0;box-sizing:border-box}
+dialog.bio .bio-in .ph{background:none;padding:36px 0 36px 36px;display:block;height:auto;align-self:center}
+dialog.bio .bio-in .ph img{display:block;width:244px;height:272px;aspect-ratio:auto;border-radius:0;background:var(--gold);object-fit:contain;object-position:50% 100%;padding:0;box-sizing:border-box}
 @media (max-width:820px){
   dialog.bio .bio-in .ph{padding:28px 0 0;height:auto;display:flex;justify-content:center}
-  dialog.bio .bio-in .ph img{width:200px;height:246px;padding:20px 0 0}
+  dialog.bio .bio-in .ph img{width:200px;height:223px;padding:0}
 }
