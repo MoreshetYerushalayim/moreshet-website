@@ -560,9 +560,7 @@ dialog.bio .bio-in .ph img{border-radius:50%;width:100%;height:auto;aspect-ratio
   .grid-team .person .more{margin-top:0;align-self:end}
   /* bio: rectangle photo on gold, fills the left side */
   dialog.bio{max-width:900px}
-  dialog.bio .bio-in{grid-template-columns:320px minmax(0,1fr);min-height:400px}
-  dialog.bio .bio-in .ph{padding:0!important;display:block!important;background:var(--gold)}
-  dialog.bio .bio-in .ph img{border-radius:0!important;width:100%!important;height:100%!important;aspect-ratio:auto!important;object-fit:cover;object-position:50% 0;display:block}
+  dialog.bio .bio-in{grid-template-columns:300px minmax(0,1fr)}
   dialog.bio .bio-in .tx{justify-content:center;padding:40px 44px}
   .board{max-width:900px;white-space:nowrap}
   /* schedule: equal day columns, Friday football at the top */
@@ -680,8 +678,8 @@ dialog.bio .bio-in .ph img{border-radius:50%;width:100%;height:auto;aspect-ratio
 /* bio pop-up: same-size rectangle photo, zoomed out */
 dialog.bio .bio-in{align-items:start}
 dialog.bio .bio-in .ph{background:none;padding:36px 0 36px 36px;display:block;height:auto}
-dialog.bio .bio-in .ph img{display:block;width:244px;height:300px;aspect-ratio:auto;border-radius:0;background:var(--gold);object-fit:contain;object-position:50% 100%;padding:44px 22px 0;box-sizing:border-box}
+dialog.bio .bio-in .ph img{display:block;width:244px;height:300px;aspect-ratio:auto;border-radius:0;background:var(--gold);object-fit:contain;object-position:50% 100%;padding:24px 0 0;box-sizing:border-box}
 @media (max-width:820px){
   dialog.bio .bio-in .ph{padding:28px 0 0;height:auto;display:flex;justify-content:center}
-  dialog.bio .bio-in .ph img{width:200px;height:246px;padding:36px 18px 0}
+  dialog.bio .bio-in .ph img{width:200px;height:246px;padding:20px 0 0}
 }
