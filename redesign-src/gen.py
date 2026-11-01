@@ -535,6 +535,11 @@ def textpage(path, title, blocks, cur):
             out += "<p>%s</p>" % t2
     if in_list:
         out += "</ul>"
+    # split headings/paragraphs that Wix ran together (Code of Conduct)
+    out = re.sub(r'([a-z])\.([A-Z])', r'\1.</p><p>\2', out)
+    for hd in ["Minyan", "Shiurim", "Going Out", "Shabbatot", "Family Visits"]:
+        out = out.replace(" %s: " % hd, "</p><h3>%s</h3><p>" % hd).replace(" %s:</p>" % hd, "</p><h3>%s</h3>" % hd)
+    out = out.replace("<p></p>", "")
     body = '<section class="band lilac tight"><div class="wrap">%s</div></section><section class="band"><div class="wrap prose rv">%s</div></section>' % (H(title, "h1"), out)
     page(path, title, cur, body)
 
