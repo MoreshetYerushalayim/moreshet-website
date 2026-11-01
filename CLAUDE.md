@@ -29,5 +29,6 @@ Owner: Victor Dweck (marketing director). The site must stay visually identical 
 - Commit to `main`; Cloudflare Pages deploys automatically in about a minute.
 
 ## Open items
-- Instagram feed on /media is a frozen snapshot until the school's Instagram is connected (live feed + Load more).
 - Campus map uses Google's keyless embed (pin + place card); exact Wix look needs a Maps API key.
+- Rabbi Teddy Berman and Sol Kurtz no longer work at the yeshiva — do not add them to the Team page.
+- Harvey Shomer appears in old magazine PDFs; leave past issues as they are.
