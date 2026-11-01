@@ -675,11 +675,13 @@ dialog.bio .bio-in .ph img{border-radius:50%;width:100%;height:auto;aspect-ratio
   .alum-h .h-center{text-align:left;align-items:flex-start}
   .alum-h .h-center *{text-align:left;margin-left:0}
 }
-/* bio pop-up: same-size rectangle photo, zoomed out */
+/* bio pop-up: same-size rectangle photo, head near the top */
 dialog.bio .bio-in{align-items:start}
-dialog.bio .bio-in .ph{background:none;padding:36px 0 36px 36px;display:block;height:auto;align-self:center}
-dialog.bio .bio-in .ph img{display:block;width:244px;height:272px;aspect-ratio:auto;border-radius:0;background:var(--gold);object-fit:contain;object-position:50% 100%;padding:0;box-sizing:border-box}
+dialog.bio .bio-in .ph{align-self:center;position:relative;overflow:hidden;background:var(--gold);width:220px;height:264px;padding:0;margin:36px 0 36px 40px;display:block}
+dialog.bio .bio-in .ph img{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:272px;height:272px;max-width:none;aspect-ratio:auto;border-radius:0;object-fit:contain;padding:0;background:none}
+dialog.bio .bio-in p{font-weight:400}
+.lead .who p,.board,.memorial p{font-weight:600}
 @media (max-width:820px){
-  dialog.bio .bio-in .ph{padding:28px 0 0;height:auto;display:flex;justify-content:center}
-  dialog.bio .bio-in .ph img{width:200px;height:223px;padding:0}
+  dialog.bio .bio-in .ph{width:180px;height:216px;margin:28px auto 0;justify-self:center}
+  dialog.bio .bio-in .ph img{width:222px;height:222px}
 }
