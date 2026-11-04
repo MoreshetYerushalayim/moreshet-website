@@ -4,3 +4,5 @@
   Content-Disposition: inline; filename="Moreshet%20Magazine%20Issue%204.pdf"; filename*=UTF-8''Moreshet%20Magazine%20Issue%204.pdf
 /_files/ugd/a4810d_d3a0a41c98494c3b86339715c7e8545c.pdf
   Content-Disposition: inline; filename="Moreshet%20Magazine%20Year%2010-%20Issue%205.pdf"; filename*=UTF-8''Moreshet%20Magazine%20Year%2010-%20Issue%205.pdf
+/media/*
+  Cache-Control: public, max-age=31536000, immutable

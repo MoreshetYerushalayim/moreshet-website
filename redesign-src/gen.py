@@ -165,7 +165,7 @@ def quotes_band(link=True):
 </section>""" % (one, more)
 
 def home():
-    hero = "/media/rd/group-2026b-2000.webp"
+    hero = "/media/rd/group26-1400.webp"
     pil = [
         ("Love of Torah &amp; Learning", "/media/0384fc45ea-a4810d_3b44c764e6a846eb86cad5384954216a~.webp",
          "At Yeshivat Moreshet Yerushalayim, we are dedicated to cultivating a deep love for Torah and learning by fostering an environment of intellectual curiosity and spiritual growth. Our dynamic curriculum, taught by passionate rabbis, challenges students to engage with Torah texts at the highest level while building strong connections to Jewish roots. Through personalized mentorship and a supportive community, we inspire students to develop a lifelong commitment to Torah study and personal development.",
