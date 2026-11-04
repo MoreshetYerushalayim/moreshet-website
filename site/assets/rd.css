@@ -299,8 +299,8 @@ dialog.lb img{max-width:min(1100px,94vw);max-height:84vh;object-fit:contain}
   .band{padding:44px 0}
   .band.tight{padding:32px 0}
   .h-center{margin-bottom:24px}
-  .hero-img{height:300px}
-  .hero-box{margin:-60px 12px 0;padding:24px 20px 26px}
+  .hero-img{height:auto}
+  .hero-box{margin:0 12px;padding:24px 20px 26px}
   .hero-box .acts .btn{flex:1 1 140px}
   .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
   .fact{padding:18px 10px;border-left:0;border-top:1px solid rgba(255,255,255,.35)}
@@ -429,7 +429,7 @@ dialog.bio .bio-in .ph img{border-radius:50%;width:100%;height:auto;aspect-ratio
 .dock a svg{stroke:var(--gold)}
 @media (max-width:820px){
   .mbar a.brand img{width:52px;height:52px}
-  .hero-box{margin:-50px 12px 0;padding:22px 20px 24px}
+  .hero-box{margin:0 12px;padding:22px 20px 24px}
   .hero-box .acts .btn{flex:1 1 100%}
   .pil summary{padding:16px 40px 16px 0;gap:12px}
   .pil .num{font-size:24px;width:26px;flex-basis:26px}
