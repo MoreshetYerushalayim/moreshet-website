@@ -24,7 +24,7 @@ Owner: Victor Dweck (marketing director). The site must stay visually identical 
   names/ids. To add a team tile or magazine card, duplicate an existing one in both layouts.
 - Team bios are `<template class="site-popup" data-popup-group="popup" data-popup-index="N">` at the
   end of `team.html` / `_m/team.html`; index N matches the Nth "About" button on the page.
-- New images go in `site/media/`; new PDFs in `site/_files/ugd/` (if > 25 MB: split into `site/_chunks/`
+- New images go in `site/media/` (cached 1 year: never overwrite an image in place, give a changed image a new filename); new PDFs in `site/_files/ugd/` (if > 25 MB: split into `site/_chunks/`
   and add a BIG_PDFS entry — see `tools/assemble.sh`).
 - Commit to `main`; Cloudflare Pages deploys automatically in about a minute.
 
